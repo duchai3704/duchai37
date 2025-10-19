@@ -1,0 +1,86 @@
+﻿@model List<ProjectCK_64130531.Models.HoadonDetailK>
+
+@{
+    ViewBag.Title = "HistoryDetail";
+}
+
+<main>
+    <style>
+        .card-body {
+            display: flex;
+            align-items: flex-start; /* Căn nội dung theo trục ngang */
+            gap: 2rem; /* Tăng khoảng cách giữa hình ảnh và nội dung */
+        }
+
+            .card-body img {
+                max-width: 100%; /* Đảm bảo hình ảnh không vượt quá khung */
+                height: auto; /* Giữ tỷ lệ hình ảnh */
+                max-height: 400px; /* Tăng chiều cao tối đa của ảnh */
+                border-radius: 10px; /* Tùy chọn: làm ảnh góc bo tròn */
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Tùy chọn: thêm hiệu ứng đổ bóng */
+            }
+
+            .card-body .col-md-3 {
+                flex: 0 0 50%; /* Hình ảnh chiếm 50% chiều rộng */
+            }
+
+            .card-body .col-md-9 {
+                flex: 0 0 50%; /* Nội dung chiếm 50% chiều rộng */
+                padding-left: 2rem; /* Tạo khoảng cách bên trái nội dung */
+            }
+    </style>
+
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Information</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="#">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="#">Login/HistoryDetail</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="contact_area section_gap_bottom">
+        <div class="container">
+            <h2>Order Details</h2>
+
+            <div class="card shadow-sm mt-3">
+                <div class="card-header">
+                    <h4>Product Information</h4>
+                </div>
+                @foreach (var hoadonDetail in Model)
+                {
+                    <div class="card-body">
+                        <div class="row">
+                            <!-- Product Image -->
+                            <div class="col-md-3">
+                                <img src="~/img/product/@hoadonDetail.HinhAnh" alt="Product Image" />
+                            </div>
+
+                            <div class="col-md-9">
+                                <p><strong>Tên sản phẩm:</strong> @hoadonDetail.TenSanpham</p>
+                                <p><strong>Size:</strong> @hoadonDetail.Size</p>
+                                <p><strong>Màu:</strong> @hoadonDetail.Mau</p>
+                                <p><strong>Số lượng:</strong> @hoadonDetail.SoLuongMua</p>
+                                <p><strong>Giá:</strong> @(hoadonDetail.Gia?.ToString("C") ?? "N/A")</p>
+                                <p><strong>Ngày giao:</strong> @(hoadonDetail.NgayGiao?.ToString("dd/MM/yyyy") ?? "Chưa xác định")</p>
+                                <p><strong>Địa chỉ:</strong> @hoadonDetail.DiaChi</p>
+                                @if (hoadonDetail.IdTrangthai != null && hoadonDetail.IdTrangthai.Equals("4"))
+                                {
+                                    <div style="text-align: right;">
+                                        <button onclick="window.location.href='/Home/ChitietSanpham?masanpham=@hoadonDetail.MaSanpham&macolor=@hoadonDetail.MaMau&masize=@hoadonDetail.Size'">Đánh giá</button>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </section>
+</main>

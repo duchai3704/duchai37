@@ -1,0 +1,69 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{661FB918-109C-4DE8-BF59-4BB8E1625865}|AdminTTCS_64130531\\AdminTTCS_64130531.csproj|d:\\h\u1ECDc c#\\adminttcs_64130531\\adminttcs_64130531\\views\\chitietsanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{661FB918-109C-4DE8-BF59-4BB8E1625865}|AdminTTCS_64130531\\AdminTTCS_64130531.csproj|solutionrelative:adminttcs_64130531\\views\\chitietsanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{661FB918-109C-4DE8-BF59-4BB8E1625865}|AdminTTCS_64130531\\AdminTTCS_64130531.csproj|D:\\H\u1ECDc C#\\AdminTTCS_64130531\\adminttcs_64130531\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{661FB918-109C-4DE8-BF59-4BB8E1625865}|AdminTTCS_64130531\\AdminTTCS_64130531.csproj|solutionrelative:adminttcs_64130531\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{661FB918-109C-4DE8-BF59-4BB8E1625865}|AdminTTCS_64130531\\AdminTTCS_64130531.csproj|D:\\H\u1ECDc C#\\AdminTTCS_64130531\\adminttcs_64130531\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{661FB918-109C-4DE8-BF59-4BB8E1625865}|AdminTTCS_64130531\\AdminTTCS_64130531.csproj|solutionrelative:adminttcs_64130531\\views\\sanpham\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 279,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\AdminTTCS_64130531\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "AdminTTCS_64130531\\Controllers\\HomeController.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\AdminTTCS_64130531\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "AdminTTCS_64130531\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAQwCsAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-06T12:11:50.949Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\AdminTTCS_64130531\\Views\\SanPham\\Index.cshtml",
+              "RelativeDocumentMoniker": "AdminTTCS_64130531\\Views\\SanPham\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\AdminTTCS_64130531\\Views\\SanPham\\Index.cshtml",
+              "RelativeToolTip": "AdminTTCS_64130531\\Views\\SanPham\\Index.cshtml",
+              "ViewState": "AgIAABYAAAAAAAAAAAAEwCcAAAAXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-06T11:15:56.434Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\AdminTTCS_64130531\\Views\\ChiTietSanPham\\Index.cshtml",
+              "RelativeDocumentMoniker": "AdminTTCS_64130531\\Views\\ChiTietSanPham\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\AdminTTCS_64130531\\AdminTTCS_64130531\\Views\\ChiTietSanPham\\Index.cshtml",
+              "RelativeToolTip": "AdminTTCS_64130531\\Views\\ChiTietSanPham\\Index.cshtml",
+              "ViewState": "AgIAAFEAAAAAAAAAAAAAAFsAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T04:20:03.516Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

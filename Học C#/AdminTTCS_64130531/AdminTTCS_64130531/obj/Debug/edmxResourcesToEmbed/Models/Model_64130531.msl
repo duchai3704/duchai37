@@ -1,0 +1,154 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="QLDienThoaiPDH_64130531ModelStoreContainer" CdmEntityContainer="QLDienThoaiPDH_64130531Entities">
+    <EntitySetMapping Name="Blog">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Blog">
+        <MappingFragment StoreEntitySet="Blog">
+          <ScalarProperty Name="maBlog" ColumnName="maBlog" />
+          <ScalarProperty Name="tieude" ColumnName="tieude" />
+          <ScalarProperty Name="noidung" ColumnName="noidung" />
+          <ScalarProperty Name="ngaytao" ColumnName="ngaytao" />
+          <ScalarProperty Name="hinhanh" ColumnName="hinhanh" />
+          <ScalarProperty Name="Mahang" ColumnName="Mahang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="BoNhoTrong">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.BoNhoTrong">
+        <MappingFragment StoreEntitySet="BoNhoTrong">
+          <ScalarProperty Name="id_dungluong" ColumnName="id_dungluong" />
+          <ScalarProperty Name="Dungluong" ColumnName="Dungluong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Color">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Color">
+        <MappingFragment StoreEntitySet="Color">
+          <ScalarProperty Name="maMau" ColumnName="maMau" />
+          <ScalarProperty Name="tenMau" ColumnName="tenMau" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Comment">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Comment">
+        <MappingFragment StoreEntitySet="Comment">
+          <ScalarProperty Name="maComment" ColumnName="maComment" />
+          <ScalarProperty Name="noiDung" ColumnName="noiDung" />
+          <ScalarProperty Name="ngayTao" ColumnName="ngayTao" />
+          <ScalarProperty Name="ma_cmCha" ColumnName="ma_cmCha" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="maBlog" ColumnName="maBlog" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chitietsanpham">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Chitietsanpham">
+        <MappingFragment StoreEntitySet="Chitietsanpham">
+          <ScalarProperty Name="id_chitietSP" ColumnName="id_chitietSP" />
+          <ScalarProperty Name="hinhAnh" ColumnName="hinhAnh" />
+          <ScalarProperty Name="soLuongTon" ColumnName="soLuongTon" />
+          <ScalarProperty Name="gia" ColumnName="gia" />
+          <ScalarProperty Name="maMau" ColumnName="maMau" />
+          <ScalarProperty Name="maSanpham" ColumnName="maSanpham" />
+          <ScalarProperty Name="id_dungluong" ColumnName="id_dungluong" />
+          <ScalarProperty Name="tenMau" ColumnName="tenMau" />
+          <ScalarProperty Name="Dungluong" ColumnName="Dungluong" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Chitiethoadon">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Chitiethoadon">
+        <MappingFragment StoreEntitySet="Chitiethoadon">
+          <ScalarProperty Name="id_chitietHD" ColumnName="id_chitietHD" />
+          <ScalarProperty Name="maHoadon" ColumnName="maHoadon" />
+          <ScalarProperty Name="id_chitietSP" ColumnName="id_chitietSP" />
+          <ScalarProperty Name="soLuong" ColumnName="soLuong" />
+          <ScalarProperty Name="trangThai" ColumnName="trangThai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hangsanxuat">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Hangsanxuat">
+        <MappingFragment StoreEntitySet="Hangsanxuat">
+          <ScalarProperty Name="Mahang" ColumnName="Mahang" />
+          <ScalarProperty Name="Tenhang" ColumnName="Tenhang" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hedieuhanh">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Hedieuhanh">
+        <MappingFragment StoreEntitySet="Hedieuhanh">
+          <ScalarProperty Name="Mahdh" ColumnName="Mahdh" />
+          <ScalarProperty Name="Tenhdh" ColumnName="Tenhdh" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Hoadon">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Hoadon">
+        <MappingFragment StoreEntitySet="Hoadon">
+          <ScalarProperty Name="maHoadon" ColumnName="maHoadon" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+          <ScalarProperty Name="ngayTao" ColumnName="ngayTao" />
+          <ScalarProperty Name="ngayGiao" ColumnName="ngayGiao" />
+          <ScalarProperty Name="id_Trangthai" ColumnName="id_Trangthai" />
+          <ScalarProperty Name="tongTien" ColumnName="tongTien" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Khuyenmai">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Khuyenmai">
+        <MappingFragment StoreEntitySet="Khuyenmai">
+          <ScalarProperty Name="maKhuyenmai" ColumnName="maKhuyenmai" />
+          <ScalarProperty Name="tenKhuyenmai" ColumnName="tenKhuyenmai" />
+          <ScalarProperty Name="phanTram" ColumnName="phanTram" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Review">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Review">
+        <MappingFragment StoreEntitySet="Review">
+          <ScalarProperty Name="maReview" ColumnName="maReview" />
+          <ScalarProperty Name="noiDung" ColumnName="noiDung" />
+          <ScalarProperty Name="ngayNhap" ColumnName="ngayNhap" />
+          <ScalarProperty Name="soSao" ColumnName="soSao" />
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="maSanpham" ColumnName="maSanpham" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sanpham">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Sanpham">
+        <MappingFragment StoreEntitySet="Sanpham">
+          <ScalarProperty Name="maSanpham" ColumnName="maSanpham" />
+          <ScalarProperty Name="tenSanpham" ColumnName="tenSanpham" />
+          <ScalarProperty Name="moTa" ColumnName="moTa" />
+          <ScalarProperty Name="soLuongyeuthich" ColumnName="soLuongyeuthich" />
+          <ScalarProperty Name="Mahdh" ColumnName="Mahdh" />
+          <ScalarProperty Name="Mahang" ColumnName="Mahang" />
+          <ScalarProperty Name="maKhuyenmai" ColumnName="maKhuyenmai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Trangthai">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Trangthai">
+        <MappingFragment StoreEntitySet="Trangthai">
+          <ScalarProperty Name="id" ColumnName="id" />
+          <ScalarProperty Name="tenTrangthai" ColumnName="tenTrangthai" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Users">
+      <EntityTypeMapping TypeName="QLDienThoaiPDH_64130531Model.Users">
+        <MappingFragment StoreEntitySet="Users">
+          <ScalarProperty Name="taikhoan" ColumnName="taikhoan" />
+          <ScalarProperty Name="matkhau" ColumnName="matkhau" />
+          <ScalarProperty Name="ten" ColumnName="ten" />
+          <ScalarProperty Name="sdt" ColumnName="sdt" />
+          <ScalarProperty Name="email" ColumnName="email" />
+          <ScalarProperty Name="diaChi" ColumnName="diaChi" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

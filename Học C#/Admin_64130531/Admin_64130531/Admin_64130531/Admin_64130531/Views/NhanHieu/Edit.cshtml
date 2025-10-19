@@ -1,0 +1,72 @@
+﻿@using Admin_64130531.Models
+@model Admin_64130531.Models.Nhanhieu
+
+@{
+    ViewData["Title"] = "Cập Nhật Nhãn Hiệu";
+}
+
+<h5 class="text-center">Cập Nhật Nhãn Hiệu</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Edit" asp-controller="Nhanhieu">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Mã Nhãn Hiệu -->
+                <div class="form-group mb-4">
+                    <label for="maNhan">Mã nhãn hiệu</label>
+                    <input id="maNhan" asp-for="maNhan" value="@Model.maNhan" class="form-control" readonly />
+                    <span asp-validation-for="maNhan" class="text-danger"></span>
+                </div>
+
+                <!-- Tên Nhãn Hiệu -->
+                <div class="form-group mb-4">
+                    <label for="tenNhan">Tên nhãn hiệu</label>
+                    <input id="tenNhan" asp-for="tenNhan" value="@Model.tenNhan" class="form-control" />
+                    <span asp-validation-for="tenNhan" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button id="btnSave" onclick="SaveEdit()" class="btn btn-primary">Lưu</button>
+</div>
+
+<script>
+    function SaveEdit() {
+        console.log("Cập nhật nhãn hiệu...");
+
+        // Lấy dữ liệu từ form
+        var maNhan = $('#maNhan').val();  // Lấy giá trị của trường mã nhãn hiệu
+        var tenNhan = $('#tenNhan').val();  // Lấy giá trị của trường tên nhãn hiệu
+
+        // Console log tất cả các giá trị
+        console.log("Mã nhãn hiệu:", maNhan);
+        console.log("Tên nhãn hiệu:", tenNhan);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            maNhan: maNhan,
+            tenNhan: tenNhan
+        };
+
+        $.ajax({
+            url: '/Nhanhieu/Edit',  // URL tới Action trong Controller (Cập nhật URL phù hợp)
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                alert('Cập nhật nhãn hiệu thành công!');
+                window.location.href = '/Nhanhieu/Index';  // Chuyển hướng tới trang danh sách nhãn hiệu
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

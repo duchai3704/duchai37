@@ -1,0 +1,69 @@
+﻿@using AdminTTCS_64130531.Models
+@model Hedieuhanh
+@{
+    ViewData["Title"] = "Danh Sách Hệ Điều Hành";
+}
+
+<h5 class="text-center">Cập Nhật Hệ Điều Hành</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Create" asp-controller="Hedieuhanh">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="Mahdh">Mã hệ điều hành</label>
+                    <input id="Mahdh" asp-for="Mahdh" value="@ViewBag.Mahdh" class="form-control" readonly/>
+                    <span asp-validation-for="Mahdh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="Tenhdh">Tên hệ điều hành</label>
+                    <input id="Tenhdh" asp-for="Tenhdh" value="@ViewBag.Tenhdh" class="form-control" />
+                    <span asp-validation-for="Tenhdh" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button id="btnAddOS" onclick="Saveedit()" class="btn btn-primary">Lưu</button>
+</div>
+
+<script>
+    function Saveedit() {
+        console.log("Cập nhật hệ điều hành...");
+
+        // Lấy dữ liệu từ form
+        var Mahdh = $('#Mahdh').val(); // Lấy giá trị của trường mã hệ điều hành
+        var Tenhdh = $('#Tenhdh').val(); // Lấy giá trị của trường tên hệ điều hành
+
+        // Console log tất cả các giá trị
+        console.log("Mã hệ điều hành:", Mahdh);
+        console.log("Tên hệ điều hành:", Tenhdh);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            Mahdh: Mahdh,
+            Tenhdh: Tenhdh
+        };
+
+        $.ajax({
+            url: '/Hedieuhanh/Edit', // URL tới Action trong Controller
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công
+                alert('Cập nhật hệ điều hành thành công!');
+                window.location.href = '/Hedieuhanh/Index'; // Chuyển hướng tới trang danh sách hệ điều hành
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText); // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="667a488276e240fc98b774cd58533bf4" Name="Diagram1">
+        <EntityTypeShape EntityType="QLCH_63131920Model.Address" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Category" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Order_details" Width="1.5" PointX="7.5" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Product_item" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Product" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Shipping_method" Width="1.5" PointX="3" PointY="5.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Shop_order" Width="1.5" PointX="5.25" PointY="4.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Shopping_cart" Width="1.5" PointX="5.25" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Shopping_cart_item" Width="1.5" PointX="7.5" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.User" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Variation" Width="1.5" PointX="3" PointY="13" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Variation_option" Width="1.5" PointX="10.5" PointY="7" IsExpanded="true" />
+        <AssociationConnector Association="QLCH_63131920Model.shop_order_shipping_address_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.products_category_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.variation_category_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.order_details_order_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.order_details_product_item_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.product_item_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.shopping_cart_item_product_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.shop_order_shipping_method_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.shop_order_user_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.shopping_cart_customer_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.shopping_cart_item_cart_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.variation_option_variation_id_foreign" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.Product_config" ManuallyRouted="false" />
+        <AssociationConnector Association="QLCH_63131920Model.User_address" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="QLCH_63131920Model.Admin" Width="1.5" PointX="7.375" PointY="0.75" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

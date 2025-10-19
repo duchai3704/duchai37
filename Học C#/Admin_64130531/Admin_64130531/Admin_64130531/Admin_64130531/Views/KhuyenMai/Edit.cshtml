@@ -1,0 +1,79 @@
+﻿@using Admin_64130531.Models
+@model Khuyenmai
+
+@{
+    ViewData["Title"] = "Cập Nhật Khuyến Mãi";
+}
+
+<h5 class="text-center">Cập Nhật Khuyến Mãi</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Edit" asp-controller="KhuyenMai">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="maKhuyenmai">Mã khuyến mãi</label>
+                    <input id="maKhuyenmai" asp-for="maKhuyenmai" value="@ViewBag.maKhuyenmai" class="form-control" readonly />
+                    <span asp-validation-for="maKhuyenmai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="tenKhuyenmai">Tên khuyến mãi</label>
+                    <input id="tenKhuyenmai" asp-for="tenKhuyenmai" value="@ViewBag.tenKhuyenmai" class="form-control" />
+                    <span asp-validation-for="tenKhuyenmai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="phanTram">Phần trăm khuyến mãi</label>
+                    <input id="phanTram" asp-for="phanTram" value="@ViewBag.phanTram" class="form-control" />
+                    <span asp-validation-for="phanTram" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button id="btnUpdatePromotion" onclick="Saveedit()" class="btn btn-primary">Lưu</button>
+</div>
+
+<script>
+    function Saveedit() {
+        console.log("Cập nhật khuyến mãi...");
+
+        // Lấy dữ liệu từ form
+        var maKhuyenmai = $('#maKhuyenmai').val();  // Lấy giá trị của trường mã khuyến mãi
+        var tenKhuyenmai = $('#tenKhuyenmai').val();  // Lấy giá trị của trường tên khuyến mãi
+        var phanTram = $('#phanTram').val();  // Lấy giá trị của trường phần trăm khuyến mãi
+
+        // Console log tất cả các giá trị
+        console.log("Mã khuyến mãi:", maKhuyenmai);
+        console.log("Tên khuyến mãi:", tenKhuyenmai);
+        console.log("Phần trăm khuyến mãi:", phanTram);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            maKhuyenmai: maKhuyenmai,
+            tenKhuyenmai: tenKhuyenmai,
+            phanTram: phanTram
+        };
+
+        $.ajax({
+            url: '/KhuyenMai/Edit',  // URL tới Action trong Controller (Cập nhật URL phù hợp)
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                alert('Cập nhật khuyến mãi thành công!');
+                window.location.href = '/KhuyenMai/Index';  // Chuyển hướng tới trang danh sách khuyến mãi
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

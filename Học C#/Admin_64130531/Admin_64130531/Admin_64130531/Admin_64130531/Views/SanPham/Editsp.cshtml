@@ -1,0 +1,152 @@
+﻿@using Admin_64130531.Models
+@model Sanpham
+@{
+    ViewData["Title"] = "Danh Sách Sản Phẩm";
+}
+
+<h5 class="text-center">Cập Nhật Sản Phẩm</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Create" asp-controller="SanPham">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <!-- Cột trái -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label>Mã sản phẩm</label>
+                    <input id="MaSanpham" asp-for="MaSanpham" value="@ViewBag.sp.maSanpham" class="form-control" />
+                    <span asp-validation-for="MaSanpham" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Tên sản phẩm</label>
+                    <input id="TenSanpham" value="@ViewBag.sp.tenSanpham" asp-for="TenSanpham" class="form-control" />
+                    <span asp-validation-for="TenSanpham" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Mô tả</label>
+                    <textarea id="MoTa" value="@ViewBag.sp.moTa" asp-for="MoTa" class="form-control"></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Lượt yêu thích</label>
+                    <input id="SoLuongyeuthich" value="@ViewBag.sp.soLuongyeuthich" asp-for="SoLuongyeuthich" class="form-control" />
+                    <span asp-validation-for="SoLuongyeuthich" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <!-- Cột phải -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label>Khuyến mãi</label>
+                    <select id="MaKhuyenmai" asp-for="MaKhuyenmai" asp-items="ViewBag.MaKhuyenmai" class="form-control">
+                        <option value="@ViewBag.sp.maKhuyenmai">@ViewBag.km.tenKhuyenmai</option>
+                        @foreach (var item in ViewBag.MaKhuyenmai)
+                        {
+                            <option value=@item.maKhuyenmai>@item.tenKhuyenmai</option>
+
+                        }
+                    </select>
+                    <span asp-validation-for="MaKhuyenmai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Nhãn hiệu</label>
+                    <select id="MaNhan" asp-for="maNhan" asp-items="ViewBag.MaNhan" class="form-control">
+                        <option value="@ViewBag.sp.maNhan">@ViewBag.nh.tenNhan</option>
+                        @foreach (var item in ViewBag.MaNhan)
+                        {
+                            <option value=@item.maNhan>@item.tenNhan</option>
+
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Danh mục</label>
+                    <select id="MaDanhMuc" asp-for="MaDanhmuc" asp-items="ViewBag.MaDanhmuc" class="form-control">
+                        <option value="@ViewBag.sp.maDanhmuc">@ViewBag.dm.tenDanhmuc</option>
+                        @foreach (var item in ViewBag.MaDanhmuc)
+                        {
+                            <option value=@item.maDanhmuc>@item.tenDanhmuc</option>
+
+                        }
+                    </select>
+                    <span asp-validation-for="MaDanhmuc" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </form>
+    <button id="btnAddProduct" onclick="Saveedit()" class="btn btn-primary">Lưu</button>
+</div>
+
+
+<script>
+
+   
+        function Saveedit() {
+            console.log("hai");
+            // Lấy dữ liệu từ form
+            var maSanPham = $('#MaSanpham').val();  // Lấy giá trị của trường mã sản phẩm
+
+
+        var tenSanPham = $('#TenSanpham').val();  // Lấy giá trị của trường tên sản phẩm
+        var moTa = $('#MoTa').val();  // Lấy giá trị của trường mô tả
+        var soLuongYeuthich = parseInt($('#SoLuongyeuthich').val());  // Lấy giá trị của trường lượt yêu thích (chuyển sang số)
+
+            var maNhan = document.getElementById('MaDanhMuc').selectedOptions[0].value;
+            var maDanhMuc = document.getElementById('MaNhan').selectedOptions[0].value;
+            var maKhuyenmai = document.getElementById('MaKhuyenmai').selectedOptions[0].value;
+        // Console log tất cả các giá trị
+        console.log("Mã sản phẩm:", maSanPham);
+        console.log("Tên sản phẩm:", tenSanPham);
+        console.log("Mô tả:", moTa);
+        console.log("Số lượng yêu thích:", soLuongYeuthich);
+            console.log("Mã khuyến mãi:", maKhuyenmai);
+        console.log("Mã nhãn hiệu:", maNhan);
+        console.log("Mã danh mục:", maDanhMuc);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            maSanPham: maSanPham,
+            tenSanPham: tenSanPham,
+            moTa: moTa,
+            soLuongYeuthich: soLuongYeuthich,
+            maKhuyenMai: maKhuyenmai,
+            maNhan: maNhan,
+            maDanhMuc: maDanhMuc
+        };
+
+            // Gửi dữ liệu formData đến controller qua AJAX (ví dụ gửi qua POST)
+            $.ajax({
+                url: '/SanPham/Edit',  // URL tới Action trong Controller (Cập nhật URL phù hợp)
+                type: 'POST',
+                data: formData,
+                success: function (response) {
+                    // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                    alert('Cập nhật thành công!');
+                    window.location.href = '/SanPham/Index';  // Chuyển hướng tới trang danh sách sản phẩm
+                },
+                error: function (xhr, status, error) {
+                    // Xử lý khi có lỗi xảy ra
+                    console.error("Lỗi khi gửi request AJAX:");
+                    console.error("Status:", status);
+                    console.error("Error:", error);
+                    console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                    console.error("Response Status:", xhr.status);
+                    alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+                }
+            });
+        }
+
+
+
+
+</script>

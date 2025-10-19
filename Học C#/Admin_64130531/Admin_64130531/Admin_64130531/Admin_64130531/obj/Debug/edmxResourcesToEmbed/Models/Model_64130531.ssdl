@@ -1,0 +1,406 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLBanGiay_64130531Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="maBlog" />
+    </Key>
+    <Property Name="maBlog" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="tieude" Type="nvarchar" MaxLength="100" />
+    <Property Name="noidung" Type="text" />
+    <Property Name="ngaytao" Type="date" />
+    <Property Name="hinhanh" Type="nvarchar" MaxLength="100" />
+    <Property Name="maDanhmuc" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="maMau" />
+    </Key>
+    <Property Name="maMau" Type="int" Nullable="false" />
+    <Property Name="tenMau" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="maComment" />
+    </Key>
+    <Property Name="maComment" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="noiDung" Type="text" />
+    <Property Name="ngayTao" Type="date" />
+    <Property Name="ma_cmCha" Type="char" MaxLength="10" />
+    <Property Name="taikhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="maBlog" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Chitietsanpham">
+    <Key>
+      <PropertyRef Name="id_chitietSP" />
+    </Key>
+    <Property Name="id_chitietSP" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="hinhAnh" Type="nvarchar" MaxLength="100" />
+    <Property Name="soLuongTon" Type="int" Nullable="false" />
+    <Property Name="gia" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="maMau" Type="int" Nullable="false" />
+    <Property Name="maSanpham" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="maSize" Type="int" Nullable="false" />
+    <Property Name="tenMau" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Chitiethoadon">
+    <Key>
+      <PropertyRef Name="id_chitietHD" />
+    </Key>
+    <Property Name="id_chitietHD" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="maHoadon" Type="char" MaxLength="10" />
+    <Property Name="id_chitietSP" Type="char" MaxLength="10" />
+    <Property Name="soLuong" Type="int" />
+    <Property Name="trangThai" Type="int" />
+  </EntityType>
+  <EntityType Name="Danhmuc">
+    <Key>
+      <PropertyRef Name="maDanhmuc" />
+    </Key>
+    <Property Name="maDanhmuc" Type="int" Nullable="false" />
+    <Property Name="tenDanhmuc" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Hoadon">
+    <Key>
+      <PropertyRef Name="maHoadon" />
+    </Key>
+    <Property Name="maHoadon" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="diaChi" Type="nvarchar" MaxLength="100" />
+    <Property Name="ngayTao" Type="date" />
+    <Property Name="ngayGiao" Type="date" />
+    <Property Name="id_Trangthai" Type="int" Nullable="false" />
+    <Property Name="tongTien" Type="decimal" Precision="10" Scale="2" />
+    <Property Name="taikhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Khuyenmai">
+    <Key>
+      <PropertyRef Name="maKhuyenmai" />
+    </Key>
+    <Property Name="maKhuyenmai" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="tenKhuyenmai" Type="nvarchar" MaxLength="50" />
+    <Property Name="phanTram" Type="float" />
+  </EntityType>
+  <EntityType Name="Nhanhieu">
+    <Key>
+      <PropertyRef Name="maNhan" />
+    </Key>
+    <Property Name="maNhan" Type="int" Nullable="false" />
+    <Property Name="tenNhan" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="maReview" />
+    </Key>
+    <Property Name="maReview" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="noiDung" Type="text" />
+    <Property Name="ngayNhap" Type="date" />
+    <Property Name="soSao" Type="int" Nullable="false" />
+    <Property Name="taikhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="maSanpham" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="maSanpham" />
+    </Key>
+    <Property Name="maSanpham" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="tenSanpham" Type="nvarchar" MaxLength="100" />
+    <Property Name="moTa" Type="nvarchar(max)" />
+    <Property Name="soLuongyeuthich" Type="int" Nullable="false" />
+    <Property Name="maNhan" Type="int" Nullable="false" />
+    <Property Name="maDanhmuc" Type="int" Nullable="false" />
+    <Property Name="maKhuyenmai" Type="char" MaxLength="10" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="maSize" />
+    </Key>
+    <Property Name="maSize" Type="int" Nullable="false" />
+    <Property Name="chieudai" Type="float" />
+    <Property Name="chieurong" Type="float" />
+    <Property Name="chieucao" Type="float" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Trangthai">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="tenTrangthai" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Users">
+    <Key>
+      <PropertyRef Name="taikhoan" />
+    </Key>
+    <Property Name="taikhoan" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="matkhau" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ten" Type="nvarchar" MaxLength="50" />
+    <Property Name="sdt" Type="char" MaxLength="10" />
+    <Property Name="email" Type="nvarchar" MaxLength="50" />
+    <Property Name="diaChi" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <Association Name="FK__Blog__maDanhmuc__5812160E">
+    <End Role="Danhmuc" Type="Self.Danhmuc" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc">
+        <PropertyRef Name="maDanhmuc" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="maDanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__maBlog__68487DD7">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="maBlog" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="maBlog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__taikhoa__6754599E">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="taikhoan" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="taikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietsa__maMau__628FA481">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="maMau" />
+      </Principal>
+      <Dependent Role="Chitietsanpham">
+        <PropertyRef Name="maMau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietsa__maSan__619B8048">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="1" />
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="maSanpham" />
+      </Principal>
+      <Dependent Role="Chitietsanpham">
+        <PropertyRef Name="maSanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietsa__maSiz__6383C8BA">
+    <End Role="Size" Type="Self.Size" Multiplicity="1" />
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="maSize" />
+      </Principal>
+      <Dependent Role="Chitietsanpham">
+        <PropertyRef Name="maSize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietho__id_ch__778AC167">
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="0..1" />
+    <End Role="Chitiethoadon" Type="Self.Chitiethoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chitietsanpham">
+        <PropertyRef Name="id_chitietSP" />
+      </Principal>
+      <Dependent Role="Chitiethoadon">
+        <PropertyRef Name="id_chitietSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietho__maHoa__76969D2E">
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="0..1" />
+    <End Role="Chitiethoadon" Type="Self.Chitiethoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadon">
+        <PropertyRef Name="maHoadon" />
+      </Principal>
+      <Dependent Role="Chitiethoadon">
+        <PropertyRef Name="maHoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadon__id_Trang__71D1E811">
+    <End Role="Trangthai" Type="Self.Trangthai" Multiplicity="1" />
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trangthai">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Hoadon">
+        <PropertyRef Name="id_Trangthai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadon__taikhoan__72C60C4A">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="taikhoan" />
+      </Principal>
+      <Dependent Role="Hoadon">
+        <PropertyRef Name="taikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Review__maSanpha__6E01572D">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="maSanpham" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="maSanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Review__taikhoan__6D0D32F4">
+    <End Role="Users" Type="Self.Users" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="taikhoan" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="taikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sanpham__maDanhm__5CD6CB2B">
+    <End Role="Danhmuc" Type="Self.Danhmuc" Multiplicity="1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc">
+        <PropertyRef Name="maDanhmuc" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="maDanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sanpham__maKhuye__5DCAEF64">
+    <End Role="Khuyenmai" Type="Self.Khuyenmai" Multiplicity="1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khuyenmai">
+        <PropertyRef Name="maKhuyenmai" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="maKhuyenmai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sanpham__maNhan__5BE2A6F2">
+    <End Role="Nhanhieu" Type="Self.Nhanhieu" Multiplicity="1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhanhieu">
+        <PropertyRef Name="maNhan" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="maNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLBanGiay_64130531ModelStoreContainer">
+    <EntitySet Name="Blog" EntityType="Self.Blog" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitietsanpham" EntityType="Self.Chitietsanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Chitiethoadon" EntityType="Self.Chitiethoadon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Danhmuc" EntityType="Self.Danhmuc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Hoadon" EntityType="Self.Hoadon" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Khuyenmai" EntityType="Self.Khuyenmai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Nhanhieu" EntityType="Self.Nhanhieu" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Review" EntityType="Self.Review" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Sanpham" EntityType="Self.Sanpham" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Size" EntityType="Self.Size" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Trangthai" EntityType="Self.Trangthai" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Users" EntityType="Self.Users" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Blog__maDanhmuc__5812160E" Association="Self.FK__Blog__maDanhmuc__5812160E">
+      <End Role="Danhmuc" EntitySet="Danhmuc" />
+      <End Role="Blog" EntitySet="Blog" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__maBlog__68487DD7" Association="Self.FK__Comment__maBlog__68487DD7">
+      <End Role="Blog" EntitySet="Blog" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__taikhoa__6754599E" Association="Self.FK__Comment__taikhoa__6754599E">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comment" EntitySet="Comment" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietsa__maMau__628FA481" Association="Self.FK__Chitietsa__maMau__628FA481">
+      <End Role="Color" EntitySet="Color" />
+      <End Role="Chitietsanpham" EntitySet="Chitietsanpham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietsa__maSan__619B8048" Association="Self.FK__Chitietsa__maSan__619B8048">
+      <End Role="Sanpham" EntitySet="Sanpham" />
+      <End Role="Chitietsanpham" EntitySet="Chitietsanpham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietsa__maSiz__6383C8BA" Association="Self.FK__Chitietsa__maSiz__6383C8BA">
+      <End Role="Size" EntitySet="Size" />
+      <End Role="Chitietsanpham" EntitySet="Chitietsanpham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietho__id_ch__778AC167" Association="Self.FK__Chitietho__id_ch__778AC167">
+      <End Role="Chitietsanpham" EntitySet="Chitietsanpham" />
+      <End Role="Chitiethoadon" EntitySet="Chitiethoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietho__maHoa__76969D2E" Association="Self.FK__Chitietho__maHoa__76969D2E">
+      <End Role="Hoadon" EntitySet="Hoadon" />
+      <End Role="Chitiethoadon" EntitySet="Chitiethoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadon__id_Trang__71D1E811" Association="Self.FK__Hoadon__id_Trang__71D1E811">
+      <End Role="Trangthai" EntitySet="Trangthai" />
+      <End Role="Hoadon" EntitySet="Hoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadon__taikhoan__72C60C4A" Association="Self.FK__Hoadon__taikhoan__72C60C4A">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Hoadon" EntitySet="Hoadon" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Review__maSanpha__6E01572D" Association="Self.FK__Review__maSanpha__6E01572D">
+      <End Role="Sanpham" EntitySet="Sanpham" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Review__taikhoan__6D0D32F4" Association="Self.FK__Review__taikhoan__6D0D32F4">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Review" EntitySet="Review" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sanpham__maDanhm__5CD6CB2B" Association="Self.FK__Sanpham__maDanhm__5CD6CB2B">
+      <End Role="Danhmuc" EntitySet="Danhmuc" />
+      <End Role="Sanpham" EntitySet="Sanpham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sanpham__maKhuye__5DCAEF64" Association="Self.FK__Sanpham__maKhuye__5DCAEF64">
+      <End Role="Khuyenmai" EntitySet="Khuyenmai" />
+      <End Role="Sanpham" EntitySet="Sanpham" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sanpham__maNhan__5BE2A6F2" Association="Self.FK__Sanpham__maNhan__5BE2A6F2">
+      <End Role="Nhanhieu" EntitySet="Nhanhieu" />
+      <End Role="Sanpham" EntitySet="Sanpham" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

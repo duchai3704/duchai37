@@ -1,0 +1,66 @@
+﻿@model BaiTap5_64130531.Models.MailInfo
+
+@{
+    ViewBag.Title = "GuiEmail";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="border border-2 border-dark p-4 " style="width: 600px;">
+        <h2 class="text-center">CHỨC NĂNG GỬI EMAIL</h2>
+        @using (Html.BeginForm("GuiEmail", "BT5", FormMethod.Post, new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group row mb-2">
+                    @Html.LabelFor(model => model.From, "Gửi từ Email", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.From, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập email người gửi" } })
+                        @Html.ValidationMessageFor(model => model.From, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    @Html.LabelFor(model => model.Password, "Mật khẩu", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.PasswordFor(model => model.Password, new { @class = "form-control", placeholder = "Nhập mật khẩu" } )
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    @Html.LabelFor(model => model.To, "Gửi đến email", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.To, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập email người nhận" } })
+                        @Html.ValidationMessageFor(model => model.To, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    @Html.LabelFor(model => model.Subject, "Tiêu đề", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Subject, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập email tiêu đề" } })
+                        @Html.ValidationMessageFor(model => model.Subject, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    @Html.LabelFor(model => model.Body, "Nội dung", htmlAttributes: new { @class = "control-label col-md-3" })
+                    <div class="col-md-9">
+                        @Html.EditorFor(model => model.Body, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập nội dung" } })
+                        @Html.ValidationMessageFor(model => model.Body, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-2">
+                    <div class="col-md-offset-2 col-md-12 d-flex justify-content-center">
+                        <input type="submit" value="Gửi email" class="btn btn-default border-dark border-2" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

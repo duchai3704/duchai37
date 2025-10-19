@@ -1,0 +1,317 @@
+﻿@{ ViewData["Title"] = "Home Page"; }
+
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+   
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Doanh thu hôm nay</p>
+                    <h6 class="mb-0">@ViewBag.TodayRevenue.Sotien</h6>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Doanh thu tháng này</p>
+                    <h6 class="mb-0">@ViewBag.MonthlyRevenue.Sotien</h6>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-sm-6 col-xl-3">
+            <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                <i class="fa fa-chart-pie fa-3x text-primary"></i>
+                <div class="ms-3">
+                    <p class="mb-2">Doanh thu năm nay</p>
+                    <h6 class="mb-0">@ViewBag.YearlyRevenue.Sotien</h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Doanh thu các tháng năm 2025</h6>
+                    <a href="">Show All</a>
+                </div>
+                <canvas id="thongkenam"></canvas>
+            </div>
+        </div>
+        <div class="col-sm-12 col-xl-6">
+            <div class="bg-light text-center rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Doanh thu của các năm</h6>
+                    <a href="">Show All</a>
+                </div>
+                <canvas id="thongkeall"></canvas> </div>
+            </div>
+        </div>
+    </div>
+
+
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <div class="d-flex align-items-center justify-content-between mb-4">
+            <h6 class="mb-0">Top sản phẩm bán chạy nhất</h6>
+            <a href="">Show All</a>
+        </div>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col"><input class="form-check-input" type="checkbox"></th>
+                        <th scope="col">Mã sản phẩm</th>
+                        <th scope="col">Tên sản phẩm</th>
+                        <th scope="col">Giá</th>
+                        <th scope="col">Số lượng đã bán</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    
+                    @{ var Lbestsp = (List<Admin_64130531.Models.BestSellingProduct>)ViewBag.BestSellingProducts;
+
+                        foreach (var item in Lbestsp)
+                        {
+                            <tr>
+                                <td><input class="form-check-input" type="checkbox"></td>
+                                <td>@item.ProductId</td>
+                                <td>@item.ProductName</td>
+                                <td>@item.ProductPrice</td>
+                                <td>@item.TotalQuantitySold</td>
+                                <td>@((item.TotalQuantitySold * item.ProductPrice))</td>
+                                <td><a class="btn btn-sm btn-primary" href="">Detail</a></td>
+                            </tr>
+ } }
+
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<div class="container-fluid pt-4 px-4">
+    <div class="row g-4">
+        <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100 bg-light rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-2">
+                    <h6 class="mb-0">Messages</h6>
+                    <a href="">Show All</a>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-3">
+                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Jhon Doe</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                        <span>Short message goes here...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-3">
+                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Jhon Doe</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                        <span>Short message goes here...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-3">
+                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Jhon Doe</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                        <span>Short message goes here...</span>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center pt-3">
+                    <img class="rounded-circle flex-shrink-0" src="img/user.jpg" alt="" style="width: 40px; height: 40px;">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 justify-content-between">
+                            <h6 class="mb-0">Jhon Doe</h6>
+                            <small>15 minutes ago</small>
+                        </div>
+                        <span>Short message goes here...</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100 bg-light rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">Calender</h6>
+                    <a href="">Show All</a>
+                </div>
+                <div id="calender"></div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-6 col-xl-4">
+            <div class="h-100 bg-light rounded p-4">
+                <div class="d-flex align-items-center justify-content-between mb-4">
+                    <h6 class="mb-0">To Do List</h6>
+                    <a href="">Show All</a>
+                </div>
+                <div class="d-flex mb-2">
+                    <input class="form-control bg-transparent" type="text" placeholder="Enter task">
+                    <button type="button" class="btn btn-primary ms-2">Add</button>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Short task goes here...</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Short task goes here...</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox" checked>
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span><del>Short task goes here...</del></span>
+                            <button class="btn btn-sm text-primary"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center border-bottom py-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Short task goes here...</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+                <div class="d-flex align-items-center pt-2">
+                    <input class="form-check-input m-0" type="checkbox">
+                    <div class="w-100 ms-3">
+                        <div class="d-flex w-100 align-items-center justify-content-between">
+                            <span>Short task goes here...</span>
+                            <button class="btn btn-sm"><i class="fa fa-times"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // Lấy dữ liệu từ ViewBag truyền về
+    var salesData = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.tknam));
+
+    // Chuyển dữ liệu thành mảng label và mảng doanh số
+    var productNames = salesData.map(item => item.Label);
+    var totalSales = salesData.map(item => item.Sotien);
+
+    console.log('Labels:', productNames);
+    console.log('Total Sales:', totalSales);
+
+    const ctx = document.getElementById('thongkenam').getContext('2d');
+    const chartBar = new Chart(ctx, {
+        type: 'bar',
+        data: {
+            labels: productNames,
+            datasets: [{
+                label: 'Doanh thu',
+                data: totalSales,
+                backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                borderColor: 'rgba(75, 192, 192, 1)',
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            plugins: {
+                legend: {
+                    position: 'top'
+                },
+                title: {
+                    display: true,
+                    text: 'Monthly Sales Overview'
+                }
+            },
+            scales: {
+                x: {
+                    beginAtZero: true
+                },
+                y: {
+                    beginAtZero: true
+                }
+            }
+        }
+    });
+
+
+  // Lấy dữ liệu từ ViewBag truyền về
+var salesData1 = @Html.Raw(Newtonsoft.Json.JsonConvert.SerializeObject(ViewBag.tkall));
+
+// Kiểm tra dữ liệu được truyền từ ViewBag
+console.log('Sales Data:', salesData1);
+
+// Chuyển dữ liệu thành mảng label và mảng doanh số
+var productNames1 = salesData1.map(item => item.Label); // Sử dụng đúng tên thuộc tính
+var totalSales1 = salesData1.map(item => item.Sotien);
+
+// Vẽ biểu đồ
+const ctx1 = document.getElementById('thongkeall').getContext('2d');
+const chartBar1 = new Chart(ctx1, {
+    type: 'bar',
+    data: {
+        labels: productNames1,
+        datasets: [{
+            label: 'Doanh thu',
+            data: totalSales1,
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+            borderColor: 'rgba(75, 192, 192, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        responsive: true,
+        plugins: {
+            legend: {
+                position: 'top'
+            },
+            title: {
+                display: true,
+                text: 'Yearly Sales Overview'
+            }
+        },
+        scales: {
+            x: {
+                beginAtZero: true
+            },
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+
+</script>

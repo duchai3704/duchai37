@@ -1,0 +1,222 @@
+﻿@using AdminTTCS_64130531.Models
+@model IEnumerable<HoaDonViewModel>
+
+<div class="container-fluid pt-4 px-4">
+    <div class="bg-light text-center rounded p-4">
+        <h5 class="text-center">Đơn đặt hàng</h5>
+        <div class="table-responsive">
+            <table class="table text-start align-middle table-bordered table-hover mb-0">
+                <thead>
+                    <tr class="text-dark">
+                        <th scope="col">Mã hoá đơn</th>
+                        <th scope="col">Tên khách hàng</th>
+                        <th scope="col">Địa chỉ</th>
+                        <th scope="col">Tổng tiền</th>
+                        <th scope="col">Trạng thái</th>
+                        <th scope="col">Ngày tạo</th>
+                        <th scope="col">Ngày giao</th>
+                        <th scope="col">Update Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td onclick="showOrderDetails('@item.MaHoaDon')">@item.MaHoaDon</td>
+                            <td>@item.TenKhachHang</td>
+                            <td>@item.DiaChiHD</td>
+                            <td>@item.TongTienHD</td>
+                            <td>@item.TrangThai</td>
+                            <td>@item.NgayTaoHD</td>
+                            <td>@(item.NgayGiaoHD.HasValue ? item.NgayGiaoHD.Value.ToString("yyyy-MM-dd") : "Chưa giao")</td>
+                            <td><button class="btn btn-sm btn-primary" onclick="showUpdateModal('@item.MaHoaDon')">Update</button></td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+<!-- Modal Bootstrap -->
+<div class="modal fade" id="orderDetailsModal" tabindex="-1" aria-labelledby="orderDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="orderDetailsModalLabel">Chi tiết hóa đơn</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <div id="orderDetailsContent">
+                    <!-- Nội dung chi tiết hóa đơn sẽ được load tại đây -->
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--cập nhật trạng thái-->
+<div class="modal fade" id="updateStatusModal" tabindex="-1" aria-labelledby="updateStatusModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="updateStatusModalLabel">Cập nhật trạng thái</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+                <form id="updateStatusForm">
+                    <div class="mb-3">
+                        <label for="maHoaDon" class="form-label">Mã hóa đơn</label>
+                        <input type="text" class="form-control" id="maHoaDon" name="maHoaDon" readonly>
+                    </div>
+                    <div class="mb-3">
+                        <label for="ngayCapNhat" class="form-label">Ngày cập nhật</label>
+                        <input type="datetime-local" class="form-control" id="ngayCapNhat" name="ngayCapNhat">
+                    </div>
+                    <div class="mb-3">
+                        <label for="trangThai" class="form-label">Trạng thái</label>
+                        <select class="form-select" id="trangThai" name="trangThai">
+                            @foreach (var item in ViewBag.TrangThai)
+                            {
+                                <option value=@item.id>@item.tenTrangthai</option>
+
+                            }
+                        </select>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
+                <button type="button" class="btn btn-primary" onclick="updateStatus()">Lưu thay đổi</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script>
+    function showOrderDetails(maHoaDon) {
+        // Hiển thị modal
+        const modal = new bootstrap.Modal(document.getElementById('orderDetailsModal'));
+        modal.show();
+
+        // Gọi API để lấy chi tiết hóa đơn
+        fetch(`https://localhost:7292/api/HoaDon/${maHoaDon}`)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("Không thể tải chi tiết hóa đơn.");
+                }
+                return response.json();
+            })
+            .then(data => {
+                // Hiển thị dữ liệu chi tiết hóa đơn
+                let content = `
+                    <table class="table table-bordered">
+                        <thead>
+                            <tr>
+                                <th>Tên sản phẩm</th>
+                                <th>Thương hiệu</th>
+                                <th>Giá</th>
+                                <th>Số lượng</th>
+                                <th>Màu</th>
+                                <th>Bộ nhớ trong</th>
+                                <th>Khuyến mãi</th>
+                                <th>Tổng giá</th>
+                            </tr>
+                        </thead>
+                        <tbody>`;
+
+                data.forEach(item => {
+                    content += `
+                        <tr>
+                            <td>${item.tenSP}</td>
+                            <td>${item.thuongHieu}</td>
+                            <td>${item.giaSP.toLocaleString()} VND</td>
+                            <td>${item.soLuongSP}</td>
+                            <td>${item.mau}</td>
+                            <td>${item.BoNhoTrong}</td>
+                            <td>${item.khuyenMai ?? 0}%</td>
+                            <td>${item.tongGia.toLocaleString()} VND</td>
+                        </tr>`;
+                });
+
+                content += `
+                        </tbody>
+                    </table>`;
+
+                document.getElementById('orderDetailsContent').innerHTML = content;
+            })
+            .catch(error => {
+                document.getElementById('orderDetailsContent').innerHTML = `
+                    <p class="text-danger">Không thể tải dữ liệu: ${error.message}</p>`;
+            });
+    }
+
+
+    //cập nhật trạng thái
+    function showUpdateModal(maHoaDon) {
+        // Hiển thị modal
+        const modal = new bootstrap.Modal(document.getElementById('updateStatusModal'));
+        modal.show();
+
+        // Đặt giá trị mặc định cho form
+        document.getElementById('maHoaDon').value = maHoaDon;
+
+        // Lấy ngày giờ hiện tại
+        const now = new Date();
+        const formattedDate = now.toISOString().slice(0, 16); // Format thành yyyy-MM-ddTHH:mm
+        document.getElementById('ngayCapNhat').value = formattedDate;
+
+        // Lấy danh sách trạng thái từ API hoặc giá trị cố định
+        fetch('https://localhost:7292/api/TrangThai') // API để lấy danh sách trạng thái
+            .then(response => response.json())
+            .then(data => {
+                const trangThaiSelect = document.getElementById('trangThai');
+                trangThaiSelect.innerHTML = ''; // Xóa các option cũ
+                data.forEach(item => {
+                    const option = document.createElement('option');
+                    option.value = item.id; // ID trạng thái
+                    option.textContent = item.tenTrangThai; // Tên trạng thái
+                    trangThaiSelect.appendChild(option);
+                });
+            })
+            .catch(error => {
+                console.error('Lỗi khi tải danh sách trạng thái:', error);
+            });
+    }
+
+    function updateStatus() {
+        const maHoaDon = document.getElementById("maHoaDon").value;
+        const ngayCapNhat = document.getElementById("ngayCapNhat").value;
+        const trangThai = document.getElementById("trangThai").value;
+
+        if (!maHoaDon || !ngayCapNhat || !trangThai) {
+            alert("Vui lòng điền đầy đủ thông tin.");
+            return;
+        }
+
+        $.ajax({
+            url: '/HoaDon/UpdateStatus', // Thay bằng tên controller của bạn
+            type: 'POST',
+            contentType: 'application/json',
+            data: JSON.stringify({
+                maHoaDon: maHoaDon,
+                ngayCapNhat: ngayCapNhat,
+                trangThai: trangThai
+            }),
+            success: function (response) {
+                if (response.success) {
+                    alert(response.message);
+                    location.reload(); // Reload trang sau khi cập nhật thành công
+                } else {
+                    alert(response.message);
+                }
+            },
+            error: function (xhr, status, error) {
+                alert("Đã xảy ra lỗi: " + error);
+            }
+        });
+    }
+</script>

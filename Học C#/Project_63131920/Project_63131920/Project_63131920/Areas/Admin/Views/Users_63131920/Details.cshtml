@@ -1,0 +1,48 @@
+﻿@model Project_63131920.Context.User
+
+@{
+    ViewBag.Title = "Chi tiết";
+}
+
+<div class="col-md-12">
+    <h3 class="text-center mt-3">Thông tin chi tiết</h3>
+</div>
+<div class="p-4">
+    <hr />
+    <table class="table" ">
+        <thead>
+            <tr>
+                <th scope="col">@Html.DisplayNameFor(model => model.id)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.fullname)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.sex)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.phone_number)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.email)</th>
+                <th scope="col">@Html.DisplayNameFor(model => model.password)</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <tr>
+                <td>@Html.DisplayFor(m => m.id)</td>
+                <td>@Html.DisplayFor(m => m.fullname)</td>
+                <td>
+                    @{ string sex = "";
+                        if (Model.sex) { sex = "Nam"; }
+                        else { sex = "Nữ"; }
+                    }
+                    @Html.DisplayFor(m => sex)
+                </td>
+                <td>@Html.DisplayFor(m => m.phone_number)</td>
+                <td>@Html.DisplayFor(m => m.email)</td>
+                <td>@Html.DisplayFor(m => m.password)</td>
+            </tr>
+
+        </tbody>
+
+
+    </table>
+</div>
+<div style="text-align: right; padding: 0 24px">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Quay lại", "Index")
+</div>

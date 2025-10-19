@@ -1,0 +1,63 @@
+﻿@model Project_63131920.Context.User
+
+
+@{
+    ViewBag.Title = "Đăng nhập";
+}
+
+<div class="row justify-content-md-center">
+    <div class="col-md-3">
+        <div class="card" style="max-width: 380px; margin-top: 50px;">
+            <div class="card-header">
+                <h4>Đăng nhập</h4>
+            </div>
+            <div class="card-body">
+                @using (Html.BeginForm("Login", "Home_63131920", FormMethod.Post))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.email, "Tài khoản")
+                        <input type="email" class="form-control" name="email" value="" placeholder="Email" />
+
+                    </div>
+                    <div class="form-group">
+                        @Html.LabelFor(m => m.password, "Mật khẩu")
+                        @Html.PasswordFor(m => m.password, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <input type="submit" name="submit" class="btn btn-primary" value="Đăng nhập" />
+                    </div>
+                    <span class="text-danger">@ViewBag.error</span>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<p class="text-center mt-4">Bạn chưa có tài khoản? <a href="~/Home_63131920/Register">Đăng ký</a></p>
+
+@*<div class="card mx-auto" style="max-width: 380px; margin-top:100px;">
+           <div class="card-body">
+               <h4 class="card-title mb-4">Sign in</h4>
+               <form>
+                   <div class="form-group">
+                       <input name="email" class="form-control" placeholder="Email" type="text">
+                   </div>-->  form-group//
+                   <div class="form-group">
+                       <input name="password" class="form-control" placeholder="password" type="password">
+                   </div>  form-group//
+
+                   <div class="form-group">
+                       <a href="#" class="float-right">forgot password?</a>
+                       <label class="float-left custom-control custom-checkbox"> <input type="checkbox" class="custom-control-input" checked=""> <div class="custom-control-label"> remember </div> </label>
+                   </div>  form-group form-check .//
+                   <div class="form-group">
+                       <button type="submit" class="btn btn-primary btn-block"> login  </button>
+                   </div>  form-group//
+               </form>
+           </div>  card-body.//
+       </div>  card .//
+
+       <p class="text-center mt-4">don't have account? <a href="#">sign up</a></p>
+       <br>
+       <br>
+    }*@

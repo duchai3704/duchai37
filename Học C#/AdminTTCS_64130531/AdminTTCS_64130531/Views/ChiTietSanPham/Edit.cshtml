@@ -1,0 +1,134 @@
+﻿@using AdminTTCS_64130531.Models
+@model AdminTTCS_64130531.Models.Chitietsanpham
+
+@{
+    ViewData["Title"] = "Cập Nhật Chi Tiết Sản Phẩm";
+}
+
+<h5 class="text-center">Cập Nhật Chi Tiết Sản Phẩm</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Edit" asp-controller="ChiTietSanPham">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <!-- Cột trái -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label>Mã chi tiết sản phẩm </label>
+                    <input id="idchitietsp" name="id_chitietSP" value="@ViewBag.id_chitietSP" class="form-control" type="text" readonly />
+                    <span asp-validation-for="idchitietsp" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Tên sản phẩm</label>
+                    <select id="MaSanPham" asp-for="MaSanpham" asp-items="ViewBag.tenSanpham" value="@ViewBag.tenSanpham" class="form-control">
+                        @foreach (var item in ViewBag.tenSanpham)
+                        {
+                            <option value="@item.maSanpham">@item.tenSanpham</option>
+                        }
+                    </select>
+                    <span asp-validation-for="MaSanPham" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Màu sắc</label>
+                    <select id="MaMau" asp-for="MaMau" asp-items="ViewBag.maMau" class="form-control">
+                        @foreach (var item in ViewBag.maMau)
+                        {
+                            <option value="@item.maMau">@item.tenMau</option>
+                        }
+                    </select>
+                    <span asp-validation-for="MaMau" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Dung lượng</label>
+                    <select id="DungLuong" asp-for="DungLuong" asp-items="ViewBag.Dungluong" class="form-control">
+                        @foreach (var item in ViewBag.Dungluong)
+                        {
+                            <option value="@item.Dungluong">@item.Dungluong</option>
+                        }
+                    </select>
+                    <span asp-validation-for="DungLuong" class="text-danger"></span>
+                </div>
+            </div>
+
+            <!-- Cột phải -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label>Hình ảnh</label>
+                    <input id="HinhAnh" type="file" asp-for="HinhAnh" class="form-control" />
+                    <span asp-validation-for="HinhAnh" class="text-danger"></span>
+                    <img src="~/img/product/@ViewBag.hinhAnh" alt="Hình ảnh sản phẩm" style="max-width: 200px; max-height: 200px;" />
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Giá</label>
+                    <input id="Gia" asp-for="Gia" class="form-control" type="number" />
+                    <span asp-validation-for="Gia" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Số lượng tồn</label>
+                    <input id="SoLuongTon" asp-for="SoLuongTon" class="form-control" type="number" />
+                    <span asp-validation-for="SoLuongTon" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnSave" onclick="SaveEdit()" class="btn btn-primary">Lưu</button>
+    </form>
+</div>
+
+<script>
+    function SaveEdit() {
+        var id_chitietSP = $('#idchitietsp').val();
+        var maSanpham = $('#MaSanPham').val();
+        var maMau = $('#MaMau').val();
+        var Dungluong = $('#DungLuong').val();
+        var gia = $('#Gia').val();
+        var soLuongTon = $('#SoLuongTon').val();
+        var hinhAnh = $('#HinhAnh').val();
+
+        var filename = hinhAnh.substring(hinhAnh.lastIndexOf("\\") + 1);
+
+        // Console log giá trị các biến
+        console.log("id_chitietSP:", id_chitietSP);
+        console.log("maSanpham:", maSanpham);
+        console.log("maMau:", maMau);
+        console.log("Dungluong:", Dungluong);
+        console.log("gia:", gia);
+        console.log("soLuongTon:", soLuongTon);
+        console.log("hinhAnh:", filename);
+
+        var formData = {
+            id_chitietSP: id_chitietSP,
+            maSanpham: maSanpham,
+            maMau: maMau,
+            Dungluong: Dungluong,
+            gia: gia,
+            soLuongTon: soLuongTon,
+            hinhAnh: filename
+        };
+
+        $.ajax({
+            url: '/ChiTietSanPham/Edit',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                alert('Cập nhật chi tiết sản phẩm thành công!');
+                window.location.href = '/ChiTietSanPham/Index';
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

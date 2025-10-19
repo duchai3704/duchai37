@@ -1,0 +1,36 @@
+﻿@{
+
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title</title>
+    @Styles.Render("~/Content/css")
+    <link href="~/Content/styleAdmin.css" rel="stylesheet" />
+</head>
+<body style="margin-top:0px;">
+    <div id="banner" style="top:0px;">
+        @Html.ActionLink("HỆ THỐNG QUẢN LÝ SINH VIÊN", "GioiThieu_64130531", "GioiThieu_64130531", null, new { @class = "navbar-brand mx-auto" })
+    </div>
+    <div id="menu" style="margin-top:10px;">
+        <div>
+            @Html.ActionLink("GIỚI THIỆU", "../GioiThieu_64130531/GioiThieu_64130531", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("THÊM MỚI", "../SinhVien0720_64130531/Create", new { @class = "a" })&nbsp;|&nbsp;
+            @Html.ActionLink("DANH SÁCH", "../SinhVien0720_64130531/Index", new { @class = "a" }) &nbsp;|&nbsp;
+            @Html.ActionLink("TÌM KIẾM", "../SinhVien0720_64130531/TimKiem_64130531", new { @class = "a" })
+            <hr style="display: block;border-top: 1px solid aqua;  margin: 8px 0;" />
+        </div>
+        <div>
+            <p align="right">  @ViewBag.NguoiDung</p>
+        </div>
+    </div>
+    <div id="content">
+        @RenderBody()
+    </div>
+    <div id="footer">
+        Copyright &copy; PHẠM ĐỨC HẢI
+    </div>
+</body>
+</html>

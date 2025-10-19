@@ -1,0 +1,75 @@
+﻿@model Project_63131920.Context.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+
+
+@using (Html.BeginForm("Create", "Products_63131920", FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    <h3 class="text-center mt-3 text-primary">Quản lý sản phẩm</h3>
+    <hr />
+    <div class="form-horizontal ml-4">
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="mb-3">
+            @Html.LabelFor(model => model.product_name, htmlAttributes: new { @class = "form-label col-md-2 font-weight-bold" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.product_name, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.product_name, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.category_id, "Phân loại", htmlAttributes: new { @class = "form-label font-weight-bold" })
+            <div class="col-md-10">
+                @Html.DropDownList("category_id", null, htmlAttributes: new { @class = "form-select" })
+                @Html.ValidationMessageFor(model => model.category_id, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.price, htmlAttributes: new { @class = "form-label col-md-2 font-weight-bold" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.price, new { htmlAttributes = new { @class = "form-control", @min = 1 } })
+                @Html.ValidationMessageFor(model => model.price, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.description, htmlAttributes: new { @class = "form-label col-md-2 font-weight-bold" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.description, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.description, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.qty_in_stock, htmlAttributes: new { @class = "form-label col-md-2 font-weight-bold" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.qty_in_stock, new { htmlAttributes = new { @class = "form-control", @min = 1 } })
+                @Html.ValidationMessageFor(model => model.qty_in_stock, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            @Html.LabelFor(model => model.product_image, htmlAttributes: new { @class = "form-label col-md-2 font-weight-bold" })
+            <div class="col-md-10">
+                <input type="file" class="form-control" name="thumnail" accept="image/*" required />
+                @Html.ValidationMessageFor(model => model.product_image, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="mb-3">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+@section scripts{
+    <script>
+        CKEDITOR.replace('description');
+    </script>
+}
+

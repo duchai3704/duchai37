@@ -1,0 +1,83 @@
+﻿@model BaiTap3_64130531.Models.EmpModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container d-flex justify-content-center mt-5">
+    <div class="border border-2 border-dark p-4 d-flex flex-column align-items-center" style="width: 800px;">
+        <h2 class="text-center">THÔNG TIN THÀNH VIÊN ĐĂNG KÍ</h2>
+
+        @using (Html.BeginForm("Index", "NhanVien_64130531", FormMethod.Post, new {enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-horizontal">
+                <hr />
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.EmpID,"Mã nhân viên" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.EmpID, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập mã nhân viên" } })
+                        @Html.ValidationMessageFor(model => model.EmpID, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.Name,"Họ tên" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập họ tên" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.BirthOfDate,"Ngày sinh" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.BirthOfDate, new { htmlAttributes = new { @class = "form-control", type="date", placeholder = "Nhập ngày sinh" } })
+                        @Html.ValidationMessageFor(model => model.BirthOfDate, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.Email,"Email" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập email" } })
+                        @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.Password,"Mật khẩu" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control", type="password", placeholder = "Nhập mật khẩu" } })
+                        @Html.ValidationMessageFor(model => model.Password, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.Department,"Đơn vị" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        @Html.EditorFor(model => model.Department, new { htmlAttributes = new { @class = "form-control", placeholder = "Nhập đơn vị" } })
+                        @Html.ValidationMessageFor(model => model.Department, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    @Html.LabelFor(model => model.Avatar,"Ảnh đại diện" ,htmlAttributes: new { @class = "control-label col-md-4" })
+                    <div class="col-md-8">
+                        <input type="file" name="Avatar" value="" />
+                        @Html.ValidationMessageFor(model => model.Avatar, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group row mb-3">
+                    <div class="col-md-offset-2 col-md-8">
+                        <input type="submit" value="Đăng kí" class="btn btn-default" />
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</div>

@@ -1,0 +1,99 @@
+﻿@model IEnumerable<Project_63131920.Context.User>
+
+@{
+    ViewBag.Title = "Quản lý khách hàng";
+    var grid = new WebGrid(Model, canPage: true, defaultSort: "id", rowsPerPage: 5);
+}
+
+
+<html>
+<head>
+    <style type="text/css">
+        .grid-footer {
+            color: #000;
+            font-size: 15px;
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            font-weight: bold;
+        }
+
+            .grid-footer a {
+                color: #ccc;
+                background-color: #ffffff;
+                padding: 5px 10px;
+            }
+
+                .grid-footer a:active, a:hover {
+                    color: #009CFF;
+                }
+
+        .alternatingRowStyle {
+            background-color: aliceblue;
+        }
+
+        table .table1 {
+            text-align: left;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 800px;
+        }
+
+        .tr, .td {
+            text-align: left;
+        }
+
+        a {
+            text-decoration: none
+        }
+
+        .link_detail {
+            color: #757575;
+        }
+
+            .link_detail:hover {
+                color: var(--primary);
+            }
+    </style>
+</head>
+<body>
+    <div>
+        @using (Html.BeginForm("Index", "Users_63131920", FormMethod.Get))
+        {
+            @Html.AntiForgeryToken();
+        }
+    </div>
+    <h3 class="text-center mt-3 p-0">Quản lý khách hàng</h3>
+    <div class="row" style="margin-left: 1rem; margin-right:1rem">
+        @Html.ActionLink("Tạo mới", "/Create", "Users_63131920", null, new { @class = "btn btn-outline-info col-md-1" })
+        <form class="d-none d-md-flex ms-4 col-md-4">
+            <input class="form-control border-2 style-place" name="user_search" type="search" placeholder="Nhập tên hoặc số điện thoại để tìm kiếm">
+        </form>
+        <span class="text-danger mt-3" style="padding: 0">@ViewBag.Alert</span>
+    </div>
+    <div id="gridContent" class="p-4">
+        @grid.GetHtml(
+             tableStyle: "table table table-hover",
+             footerStyle: "grid-footer",
+             fillEmptyRows: true,
+             mode: WebGridPagerModes.Numeric,
+             columns: new[]  // colums in grid
+             {
+                grid.Column("STT",format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+                grid.Column("id","ID"),
+                grid.Column("Họ tên", format: (item) => new HtmlString($"<a class='link_detail' title='Xem chi tiết' href='/Admin/Users_63131920/Details/{item.id}'>{item.fullname}</a>")),
+                grid.Column("sex","Giới tính",format: (@item) => @item.sex==true?"Nam":"Nữ"),
+                grid.Column("phone_number","Số điện thoại"),
+                grid.Column("email","Email"),
+                grid.Column("password","Mật khẩu"),
+                grid.Column("Thao tác", format: (item) => new HtmlString(
+                    $"<div>" +
+                    $"{Html.ActionLink("Sửa", "/Edit", "Users_63131920", new { id = item.id }, htmlAttributes: new { @class = "btn btn-success m-2 inline" })}" +
+                    $"{Html.ActionLink("Xóa", "Delete", "Users_63131920", new { id = item.id }, new { @class = "btn btn-danger m-2 inline", onclick = "return confirm('Bạn có chắc chắn muốn xóa?');" })}" +
+                    $"</div>"
+                ))
+             }
+
+)
+    </div>
+</body>
+</html>

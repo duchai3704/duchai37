@@ -1,0 +1,284 @@
+﻿
+@{
+    ViewBag.Title = "Cart";
+}
+<main>
+    <!-- Start Banner Area -->
+    <section class="banner-area organic-breadcrumb">
+        <div class="container">
+            <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+                <div class="col-first">
+                    <h1>Shopping Cart</h1>
+                    <nav class="d-flex align-items-center">
+                        <a href="index.html">Home<span class="lnr lnr-arrow-right"></span></a>
+                        <a href="category.html">Cart</a>
+                    </nav>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End Banner Area -->
+    <!--================Cart Area =================-->
+    <section class="cart_area">
+        <div class="container">
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Tên sản phẩm</th>
+                                <th scope="col">Giá</th>
+                                <th scope="col">Số lượng</th>
+                                <th scope="col">Tổng</th>
+                                <th scope="col" style="text-align:center">Đơn vị tiền</th>
+                                <th scope="col" style="text-align:center">Tuỳ chọn</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                            @model List<ProjectTTCS_64130531.Models.GioHangItem>
+                            @{
+                                if (Request.Cookies["idUser"] == null)
+                                {
+                                    <p>@TempData["THONGBAO"]</p>
+                                }
+                                else
+                                if (Model != null)
+                                {
+                                    foreach (var item in Model)
+                                    {
+                                        <tr id="col">
+                                            <td>
+                                                <div class="media">
+                                                    <div class="d-flex">
+                                                        <img src="~/img/product/@(item.HinhAnh)" alt="" style="width: 150px; height: 150px; border-radius: 8px;">
+                                                    </div>
+                                                    <div class="media-body">
+                                                        <p id="name-@item.IdCthd">@item.TenSanPham - @item.Mau</p>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h5>@((item.Gia - item.Gia * (Convert.ToDecimal(item.Makhuyenmai) / 100))) VNĐ<span style="text-decoration: line-through; color: #cccccc; margin-bottom: 0; margin-left:20px;">@item.Gia VNĐ</span></h5>
+                                            </td>
+                                            <td>
+                                                <div class="product_count">
+                                                    <div>
+                                                        <input type="text" name="qty" id="sst-@item.IdCthd" maxlength="2" value="1" title="Quantity:" class="input-text qty">
+                                                        <button onclick="increaseQuantity('sst-@item.IdCthd', 'error-@item.IdCthd',  @item.Soluongton, '@((item.Gia - item.Gia * (Convert.ToDecimal(item.Makhuyenmai) / 100)))', 'sum-@item.IdCthd')" class="increase items-count" type="button">
+                                                            <i class="lnr lnr-chevron-up"></i>
+                                                        </button>
+                                                        <button onclick="decreaseQuantity('sst-@item.IdCthd', 'error-@item.IdCthd', '@((item.Gia - item.Gia * (Convert.ToDecimal(item.Makhuyenmai) / 100)))', 'sum-@item.IdCthd')" class="reduced items-count" type="button">
+                                                            <i class="lnr lnr-chevron-down"></i>
+                                                        </button>
+                                                    </div>
+                                                    <p id="error-@item.IdCthd" style="color: red; display: none; margin-top: 5px; position:absolute;">Số lượng trong kho không quá @item.Soluongton!</p>
+                                                </div>
+                                            </td>
+                                            <td>
+                                                <h5 style="text-align:center" class='valueMoney-@item.IdCthd' id='sum-@item.IdCthd'>@((item.Gia - item.Gia * (Convert.ToDecimal(item.Makhuyenmai) / 100)))</h5>
+                                            </td>
+                                            <td>
+                                                <h5>VNĐ</h5>
+                                            </td>
+                                            <td>
+                                                <input onclick="updateTotalAmount()" type="checkbox" id="buy-@item.IdCthd" />
+                                            </td>
+                                        </tr>
+                                    }
+
+
+                                }
+                                else
+                                {
+                                    <p>Bạn chưa có sản phẩm nào trong giỏ hàng</p>
+                                }
+                            }
+
+                            <tr>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <h5>Tổng hoá đơn</h5>
+                                </td>
+                                <td>
+                                    <h5 id="totalAmount">0 VNĐ</h5>
+                                </td>
+                            </tr>
+                            <tr class="out_button_area">
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                </td>
+                                <td>
+                                    <div class="checkout_btn_inner d-flex align-items-center">
+                                        <a class="gray_btn" href="@Url.Action("Index", "Home_64130531")">Tiếp tục mua sắm</a>
+                                        <a class="gray_btn" style="cursor:pointer" onclick="deleteProduct()">Xoá khỏi giỏ hàng</a>
+                                        <a class="primary-btn" onclick="sendSelectedItemsToServer()">Thanh toán</a>
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--================End Cart Area =================-->
+
+</main>
+<script>
+
+   updateTotalAmount()
+    // Hàm tăng số lượng
+    function increaseQuantity(inputId, errorId, soluong, gia, tonggia) {
+        var result = document.getElementById(inputId);
+        var errorMessage = document.getElementById(errorId);
+        var sum = document.getElementById(tonggia)
+        var sst = parseInt(result.value);
+
+        if (!isNaN(sst) && sst < soluong) {
+            result.value = sst + 1;
+            errorMessage.style.display = 'none';
+            console.log(tonggia, parseFloat(gia))
+            sum.innerText = ((parseInt(result.value) * parseFloat(gia.replace(",", "."))).toFixed(2)).replace(".", ",");
+        } else {
+            errorMessage.style.display = 'block';
+        }
+        updateTotalAmount()
+    }
+
+    // Hàm giảm số lượng
+    function decreaseQuantity(inputId, errorId, gia, tonggia) {
+        var result = document.getElementById(inputId);
+        var errorMessage = document.getElementById(errorId);
+        var sum = document.getElementById(tonggia)
+        var sum = document.getElementById(tonggia)
+        var sst = parseInt(result.value);
+
+        if (!isNaN(sst) && sst > 1) {
+            result.value = sst - 1;
+            errorMessage.style.display = 'none';
+            sum.innerText = ((parseInt(result.value) * parseFloat(gia.replace(",", "."))).toFixed(2)).replace(".",",");
+
+        }
+        updateTotalAmount()
+    }
+  function updateTotalAmount() {
+   var totalAmount = 0;
+
+   /* var rows = document.querySelectorAll('#col'); // Lấy tất cả các hàng trong bảng
+    rows.forEach(function(row) {
+        var priceElement = row.querySelector(".valueMoney"); // Lấy thẻ giá của sản phẩm
+        console.log(parseFloat(priceElement.innerText.replace(" VNĐ", "").replace(",", ".")))
+        if (priceElement) {
+            var price = parseFloat(priceElement.innerText.replace(" VNĐ", "").replace(",", "."));
+
+            totalAmount += price;
+        }
+    });*/
+
+     // document.getElementById('totalAmount').innerText = totalAmount.toFixed(2) + " VNĐ";
+
+      document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+          if (checkbox.checked) {
+              const id = checkbox.id.replace('buy-', '');
+              const priceElement = document.querySelector(`.valueMoney-${id}`);
+              if (priceElement) {
+                  var price = parseFloat(priceElement.innerText.replace(" VNĐ", "").replace(",", "."));
+
+                  totalAmount += price;
+              }
+          }
+      });
+      document.getElementById('totalAmount').innerText = totalAmount.toFixed(2) + " VNĐ";
+
+  }
+function sendSelectedItemsToServer() {
+    const selectedItems = [];
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        if (checkbox.checked) {
+            const id = checkbox.id.replace('buy-', '');
+            const quantityInput = document.getElementById(`sst-${id}`);
+            const nameInput = document.getElementById(`name-${id}`);
+            const sumMoney = document.querySelector(`.valueMoney-${id}`);
+            const quantity = quantityInput ? quantityInput.value : 0;
+          /*  console.log(quantity)
+            alert("đsá")*/
+            selectedItems.push({ idCthd: id, soluong: quantity, name: nameInput.innerText, tien: parseFloat(sumMoney.innerText.replace(" VNĐ", "").replace(",", ".")) });
+        }
+    });
+   var jsonData = JSON.stringify(selectedItems);
+
+  var encodedJsonData = encodeURIComponent(jsonData);
+
+  var sumMoney =  document.getElementById('totalAmount').innerText
+  window.location.href = '@Url.Action("Index", "Thanhtoan_64130531")' + '?jsonData=' + encodedJsonData + '&tongtien=' + sumMoney;
+
+}
+    function deleteProduct() {
+    const selectedItems = [];
+    document.querySelectorAll('input[type="checkbox"]').forEach((checkbox) => {
+        if (checkbox.checked) {
+            const id = checkbox.id.replace('buy-', '');
+            selectedItems.push(id);
+        }
+    });
+
+    if (selectedItems.length === 0) {
+        alert('Vui lòng chọn ít nhất một sản phẩm để xóa.');
+        return;
+    }
+
+    const jsonData = JSON.stringify(selectedItems);
+
+    // Gửi yêu cầu AJAX tới server
+    fetch('@Url.Action("deleteProduct", "Shop_64130531")', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: jsonData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert(data.message);
+            location.reload(); // Reload lại trang nếu xóa thành công
+        } else {
+            alert(data.message);
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Đã xảy ra lỗi khi xóa sản phẩm.');
+    });
+}
+
+
+ function getCookieValue(name) {
+     const cookies = document.cookie.split(';');
+     for (const cookie of cookies) {
+         const [key, value] = cookie.trim().split('=');
+         if (key === name) return decodeURIComponent(value);
+     }
+     return null;
+ }
+
+ // Lấy giá trị idUser từ cookie
+ const idUser = getCookieValue("idUser");
+
+ // Nếu idUser tồn tại, cập nhật URL cho liên kết
+ if (idUser) {
+     const shoppingCartLink = document.getElementById("shoppingCartLink");
+     shoppingCartLink.href = `@Url.Action("Cart", "Shop_64130531", new { idUser = "__idUser__" })`.replace("__idUser__", idUser);
+ } else {
+     // Nếu không có idUser, có thể hướng người dùng đến trang đăng nhập
+     alert("Bạn cần đăng nhập để vào giỏ hàng.");
+     window.location.href = '/Account_64130531/Login';
+ }
+</script>

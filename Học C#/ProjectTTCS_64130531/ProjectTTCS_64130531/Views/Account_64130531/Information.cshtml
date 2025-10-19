@@ -1,0 +1,94 @@
+﻿@{
+    ViewData["Title"] = "Information Pages";
+}
+<style>
+    .custom-bg {
+        background-color: #FFB900 !important;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #FFFFFF !important;
+        font-weight: bold;
+    }
+
+    .nav-tabs .nav-link {
+        color: #000000 !important;
+    }
+</style>
+
+<!-- Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Information</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="#">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#">Login/Information</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!-- Information Area -->
+<section class="contact_area section_gap_bottom">
+    <div class="container">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active custom-bg" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile" type="button" role="tab" aria-controls="profile" aria-selected="true">Thông tin cá nhân</button>
+            </li>
+        </ul>
+
+        <!-- Tab Content -->
+        <div class="tab-content" id="myTabContent">
+            <!-- Tab 1: Thông tin cá nhân -->
+            <div class="tab-pane fade show active" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header custom-bg text-white">
+                        <h4 class="mb-0">Thông Tin Người Dùng</h4>
+                    </div>
+                    <div class="card-body">
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-secondary font-weight-bold">Tài khoản:</div>
+                            <div class="col-sm-8">@Model.taikhoan</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-secondary font-weight-bold">Mật khẩu:</div>
+                            <div class="col-sm-8">@Model.matkhau</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-secondary font-weight-bold">Họ tên:</div>
+                            <div class="col-sm-8">@Model.ten</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-secondary font-weight-bold">Email:</div>
+                            <div class="col-sm-8">@Model.email</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-secondary font-weight-bold">Số điện thoại:</div>
+                            <div class="col-sm-8">@Model.sdt</div>
+                        </div>
+                        <div class="row mb-3">
+                            <div class="col-sm-4 text-secondary font-weight-bold">Địa chỉ:</div>
+                            <div class="col-sm-8">@Model.diaChi</div>
+                        </div>
+                        <!-- Logout Button -->
+                        <div class="row mt-4">
+                            <div class="col-sm-12 text-center">
+                                <form action="@Url.Action("Logout", "Account_64130531")" method="post">
+                                    <button type="submit" class="btn btn-danger">Đăng xuất</button>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+</section>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<!-- Bootstrap Bundle JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+

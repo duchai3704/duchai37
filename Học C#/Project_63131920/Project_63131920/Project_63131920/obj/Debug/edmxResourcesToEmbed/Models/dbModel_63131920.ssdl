@@ -1,0 +1,403 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="QLCHModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Address">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="province" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="city" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="street_number" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="district" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Category">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'QLCH.dbo.Order_details' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Order_details">
+    <Key>
+      <PropertyRef Name="id" />
+      <PropertyRef Name="order_id" />
+      <PropertyRef Name="product_item_id" />
+      <PropertyRef Name="price" />
+      <PropertyRef Name="quantity" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" />
+    <Property Name="order_id" Type="int" Nullable="false" />
+    <Property Name="product_item_id" Type="int" Nullable="false" />
+    <Property Name="price" Type="bigint" Nullable="false" />
+    <Property Name="quantity" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_config">
+    <Key>
+      <PropertyRef Name="product_item_id" />
+      <PropertyRef Name="variation_option_id" />
+    </Key>
+    <Property Name="product_item_id" Type="int" Nullable="false" />
+    <Property Name="variation_option_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Product_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+    <Property Name="qty_in_stock" Type="int" Nullable="false" />
+    <Property Name="product_image" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="price" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Products">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="product_name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="price" Type="bigint" Nullable="false" />
+    <Property Name="description" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="qty_in_stock" Type="int" Nullable="false" />
+    <Property Name="product_image" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shipping_method">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="price" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shop_order">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+    <Property Name="order_date" Type="datetime" Nullable="false" />
+    <Property Name="shipping_address" Type="int" Nullable="false" />
+    <Property Name="shipping_method" Type="int" Nullable="false" />
+    <Property Name="order_total" Type="bigint" Nullable="false" />
+    <Property Name="order_status" Type="bit" Nullable="false" />
+    <Property Name="payment_method" Type="nvarchar" MaxLength="1" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shopping_cart">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="user_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Shopping_cart_item">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="cart_id" Type="int" Nullable="false" />
+    <Property Name="qty" Type="int" Nullable="false" />
+    <Property Name="product_id" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Staff">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="email" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="fullname" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="address_id" Type="int" Nullable="false" />
+    <Property Name="email" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="phone_number" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="password" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Variation">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="category_id" Type="int" Nullable="false" />
+    <Property Name="name" Type="nvarchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Variation_option">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="variation_id" Type="int" Nullable="false" />
+    <Property Name="value" Type="varchar" MaxLength="255" Nullable="false" />
+  </EntityType>
+  <Association Name="order_details_order_id_foreign">
+    <End Role="Shop_order" Type="Self.Shop_order" Multiplicity="1" />
+    <End Role="Order_details" Type="Self.Order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shop_order">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order_details">
+        <PropertyRef Name="order_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="order_details_product_item_id_foreign">
+    <End Role="Product_item" Type="Self.Product_item" Multiplicity="1" />
+    <End Role="Order_details" Type="Self.Order_details" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_item">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Order_details">
+        <PropertyRef Name="product_item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="product_config_product_item_id_foreign">
+    <End Role="Product_item" Type="Self.Product_item" Multiplicity="1" />
+    <End Role="Product_config" Type="Self.Product_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_item">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Product_config">
+        <PropertyRef Name="product_item_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="product_config_variation_option_id_foreign">
+    <End Role="Variation_option" Type="Self.Variation_option" Multiplicity="1" />
+    <End Role="Product_config" Type="Self.Product_config" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variation_option">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Product_config">
+        <PropertyRef Name="variation_option_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="product_item_id_foreign">
+    <End Role="Products" Type="Self.Products" Multiplicity="1" />
+    <End Role="Product_item" Type="Self.Product_item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Products">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Product_item">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="products_category_id_foreign">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Products" Type="Self.Products" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Products">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shop_order_shipping_address_foreign">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="Shop_order" Type="Self.Shop_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shop_order">
+        <PropertyRef Name="shipping_address" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shop_order_shipping_method_foreign">
+    <End Role="Shipping_method" Type="Self.Shipping_method" Multiplicity="1" />
+    <End Role="Shop_order" Type="Self.Shop_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shipping_method">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shop_order">
+        <PropertyRef Name="shipping_method" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shop_order_user_id_foreign">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Shop_order" Type="Self.Shop_order" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shop_order">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shopping_cart_customer_id_foreign">
+    <End Role="User" Type="Self.User" Multiplicity="1" />
+    <End Role="Shopping_cart" Type="Self.Shopping_cart" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shopping_cart">
+        <PropertyRef Name="user_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shopping_cart_item_cart_id_foreign">
+    <End Role="Shopping_cart" Type="Self.Shopping_cart" Multiplicity="1" />
+    <End Role="Shopping_cart_item" Type="Self.Shopping_cart_item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Shopping_cart">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shopping_cart_item">
+        <PropertyRef Name="cart_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="shopping_cart_item_product_id_foreign">
+    <End Role="Product_item" Type="Self.Product_item" Multiplicity="1" />
+    <End Role="Shopping_cart_item" Type="Self.Shopping_cart_item" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product_item">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Shopping_cart_item">
+        <PropertyRef Name="product_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="user_address_id_foreign">
+    <End Role="Address" Type="Self.Address" Multiplicity="1" />
+    <End Role="User" Type="Self.User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="address_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="variation_category_id_foreign">
+    <End Role="Category" Type="Self.Category" Multiplicity="1" />
+    <End Role="Variation" Type="Self.Variation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Category">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Variation">
+        <PropertyRef Name="category_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="variation_option_variation_id_foreign">
+    <End Role="Variation" Type="Self.Variation" Multiplicity="1" />
+    <End Role="Variation_option" Type="Self.Variation_option" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Variation">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Variation_option">
+        <PropertyRef Name="variation_id" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="QLCHModelStoreContainer">
+    <EntitySet Name="Address" EntityType="Self.Address" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_config" EntityType="Self.Product_config" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Product_item" EntityType="Self.Product_item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Products" EntityType="Self.Products" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shipping_method" EntityType="Self.Shipping_method" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shop_order" EntityType="Self.Shop_order" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shopping_cart" EntityType="Self.Shopping_cart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Shopping_cart_item" EntityType="Self.Shopping_cart_item" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Staff" EntityType="Self.Staff" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="User" EntityType="Self.User" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variation" EntityType="Self.Variation" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Variation_option" EntityType="Self.Variation_option" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Order_details" EntityType="Self.Order_details" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Order_details].[id] AS [id], 
+    [Order_details].[order_id] AS [order_id], 
+    [Order_details].[product_item_id] AS [product_item_id], 
+    [Order_details].[price] AS [price], 
+    [Order_details].[quantity] AS [quantity]
+    FROM [dbo].[Order_details] AS [Order_details]</DefiningQuery>
+    </EntitySet>
+    <AssociationSet Name="order_details_order_id_foreign" Association="Self.order_details_order_id_foreign">
+      <End Role="Shop_order" EntitySet="Shop_order" />
+      <End Role="Order_details" EntitySet="Order_details" />
+    </AssociationSet>
+    <AssociationSet Name="order_details_product_item_id_foreign" Association="Self.order_details_product_item_id_foreign">
+      <End Role="Product_item" EntitySet="Product_item" />
+      <End Role="Order_details" EntitySet="Order_details" />
+    </AssociationSet>
+    <AssociationSet Name="product_config_product_item_id_foreign" Association="Self.product_config_product_item_id_foreign">
+      <End Role="Product_item" EntitySet="Product_item" />
+      <End Role="Product_config" EntitySet="Product_config" />
+    </AssociationSet>
+    <AssociationSet Name="product_config_variation_option_id_foreign" Association="Self.product_config_variation_option_id_foreign">
+      <End Role="Variation_option" EntitySet="Variation_option" />
+      <End Role="Product_config" EntitySet="Product_config" />
+    </AssociationSet>
+    <AssociationSet Name="product_item_id_foreign" Association="Self.product_item_id_foreign">
+      <End Role="Products" EntitySet="Products" />
+      <End Role="Product_item" EntitySet="Product_item" />
+    </AssociationSet>
+    <AssociationSet Name="products_category_id_foreign" Association="Self.products_category_id_foreign">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Products" EntitySet="Products" />
+    </AssociationSet>
+    <AssociationSet Name="shop_order_shipping_address_foreign" Association="Self.shop_order_shipping_address_foreign">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="Shop_order" EntitySet="Shop_order" />
+    </AssociationSet>
+    <AssociationSet Name="shop_order_shipping_method_foreign" Association="Self.shop_order_shipping_method_foreign">
+      <End Role="Shipping_method" EntitySet="Shipping_method" />
+      <End Role="Shop_order" EntitySet="Shop_order" />
+    </AssociationSet>
+    <AssociationSet Name="shop_order_user_id_foreign" Association="Self.shop_order_user_id_foreign">
+      <End Role="User" EntitySet="User" />
+      <End Role="Shop_order" EntitySet="Shop_order" />
+    </AssociationSet>
+    <AssociationSet Name="shopping_cart_customer_id_foreign" Association="Self.shopping_cart_customer_id_foreign">
+      <End Role="User" EntitySet="User" />
+      <End Role="Shopping_cart" EntitySet="Shopping_cart" />
+    </AssociationSet>
+    <AssociationSet Name="shopping_cart_item_cart_id_foreign" Association="Self.shopping_cart_item_cart_id_foreign">
+      <End Role="Shopping_cart" EntitySet="Shopping_cart" />
+      <End Role="Shopping_cart_item" EntitySet="Shopping_cart_item" />
+    </AssociationSet>
+    <AssociationSet Name="shopping_cart_item_product_id_foreign" Association="Self.shopping_cart_item_product_id_foreign">
+      <End Role="Product_item" EntitySet="Product_item" />
+      <End Role="Shopping_cart_item" EntitySet="Shopping_cart_item" />
+    </AssociationSet>
+    <AssociationSet Name="user_address_id_foreign" Association="Self.user_address_id_foreign">
+      <End Role="Address" EntitySet="Address" />
+      <End Role="User" EntitySet="User" />
+    </AssociationSet>
+    <AssociationSet Name="variation_category_id_foreign" Association="Self.variation_category_id_foreign">
+      <End Role="Category" EntitySet="Category" />
+      <End Role="Variation" EntitySet="Variation" />
+    </AssociationSet>
+    <AssociationSet Name="variation_option_variation_id_foreign" Association="Self.variation_option_variation_id_foreign">
+      <End Role="Variation" EntitySet="Variation" />
+      <End Role="Variation_option" EntitySet="Variation_option" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

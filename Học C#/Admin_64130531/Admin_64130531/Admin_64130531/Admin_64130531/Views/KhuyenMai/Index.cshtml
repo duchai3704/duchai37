@@ -1,0 +1,153 @@
+﻿@using Admin_64130531.Models
+@model IEnumerable<Admin_64130531.Models.Khuyenmai>
+
+@{
+    ViewData["Title"] = "Danh Sách Khuyến Mãi";
+}
+
+<h5 class="text-center">Danh Sách Khuyến Mãi</h5>
+<div class="col-md-9">
+    <form method="post" asp-action="Create" asp-controller="KhuyenMai">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="maKhuyenmai">Mã khuyến mãi</label>
+                    <input id="maKhuyenmai" asp-for="maKhuyenmai" class="form-control" />
+                    <span asp-validation-for="maKhuyenmai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="tenKhuyenmai">Tên khuyến mãi</label>
+                    <input id="tenKhuyenmai" asp-for="tenKhuyenmai" class="form-control" />
+                    <span asp-validation-for="tenKhuyenmai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="phanTram">Phần trăm khuyến mãi</label>
+                    <input id="phanTram" asp-for="phanTram" class="form-control" />
+                    <span asp-validation-for="phanTram" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnAddPromotion" onclick="addPromotion()" class="btn btn-primary">Thêm khuyến mãi</button>
+    </form>
+</div>
+
+<!-- Hiển thị bảng khuyến mãi -->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mã khuyến mãi</th>
+            <th scope="col">Tên khuyến mãi</th>
+            <th scope="col">Phần trăm</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.maKhuyenmai</td>
+                    <td>@item.tenKhuyenmai</td>
+                    <td>@item.phanTram %</td>
+                    <td>
+                        <div class="d-flex gap-2" style="margin-left: -65px;">
+                            <a asp-action="Edit" href="/KhuyenMai/Edit?id=@item.maKhuyenmai" class="btn btn-warning btn-sm" asp-controller="KhuyenMai">Edit</a>
+                            <a asp-action="DeleteConfirmed" onclick="return confirm('Bạn có chắc chắn muốn xóa khuyến mãi này?') && deletePromotion('@item.maKhuyenmai')" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">Không có khuyến mãi nào được tìm thấy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    // Xóa khuyến mãi
+    function deletePromotion(maKhuyenmai) {
+        console.log("Xóa khuyến mãi có mã:", maKhuyenmai);
+
+        var formData = {
+            id: maKhuyenmai,
+        };
+
+        $.ajax({
+            url: '/KhuyenMai/DeleteConfirmed',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Xóa khuyến mãi thành công');
+                window.location.href = '/KhuyenMai/Index';  // Tải lại trang danh sách khuyến mãi
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+    // Thêm khuyến mãi
+    function addPromotion() {
+        console.log("Thêm khuyến mãi");
+
+        // Lấy dữ liệu từ form
+        var maKhuyenmai = $('#maKhuyenmai').val();  // Lấy giá trị của trường mã khuyến mãi
+        var tenKhuyenmai = $('#tenKhuyenmai').val();  // Lấy giá trị của trường tên khuyến mãi
+        var phanTram = $('#phanTram').val();  // Lấy giá trị của trường phần trăm khuyến mãi
+
+        // Kiểm tra dữ liệu nhập
+        if (!maKhuyenmai || !tenKhuyenmai || !phanTram) {
+            alert('Vui lòng nhập đầy đủ thông tin mã khuyến mãi, tên khuyến mãi và phần trăm khuyến mãi.');
+            return;
+        }
+
+        // Console log dữ liệu nhập vào
+        console.log("Mã khuyến mãi:", maKhuyenmai);
+        console.log("Tên khuyến mãi:", tenKhuyenmai);
+        console.log("Phần trăm khuyến mãi:", phanTram);
+
+        // Chuẩn bị dữ liệu để gửi qua AJAX
+        var formData = {
+            maKhuyenmai: maKhuyenmai,
+            tenKhuyenmai: tenKhuyenmai,
+            phanTram: phanTram
+        };
+
+        // Gửi dữ liệu tới server qua AJAX
+        $.ajax({
+            url: '/KhuyenMai/Create',  // URL tới Action trong Controller
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                console.log("Phản hồi từ server:", response); // Log phản hồi
+                alert('Khuyến mãi đã được thêm thành công!');
+                window.location.href = '/KhuyenMai/Index';  // Chuyển hướng sau khi thêm thành công
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

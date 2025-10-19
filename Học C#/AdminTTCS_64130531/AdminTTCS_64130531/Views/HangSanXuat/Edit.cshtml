@@ -1,0 +1,69 @@
+﻿@using AdminTTCS_64130531.Models
+@model Hangsanxuat
+@{
+    ViewData["Title"] = "Cập Nhật Hãng Sản Xuất";
+}
+
+<h5 class="text-center">Cập Nhật Hãng Sản Xuất</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Edit" asp-controller="HangSanXuat">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="maHang">Mã hãng sản xuất</label>
+                    <input id="maHang" asp-for="Mahang" value="@ViewBag.Mahang" class="form-control" readonly/>
+                    <span asp-validation-for="Mahang" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="tenHang">Tên hãng sản xuất</label>
+                    <input id="tenHang" asp-for="Tenhang" value="@ViewBag.Tenhang" class="form-control" />
+                    <span asp-validation-for="Tenhang" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button id="btnUpdateManufacturer" onclick="Saveedit()" class="btn btn-primary">Lưu</button>
+</div>
+
+<script>
+    function Saveedit() {
+        console.log("Cập nhật hãng sản xuất...");
+
+        // Lấy dữ liệu từ form
+        var maHang = $('#maHang').val();  // Lấy giá trị của trường mã hãng sản xuất
+        var tenHang = $('#tenHang').val();  // Lấy giá trị của trường tên hãng sản xuất
+
+        // Console log tất cả các giá trị
+        console.log("Mã hãng sản xuất:", maHang);
+        console.log("Tên hãng sản xuất:", tenHang);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            Mahang: maHang,
+            Tenhang: tenHang
+        };
+
+        $.ajax({
+            url: '/HangSanXuat/Edit',  // URL tới Action trong Controller (Cập nhật URL phù hợp)
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                alert('Cập nhật hãng sản xuất thành công!');
+                window.location.href = '/HangSanXuat/Index';  // Chuyển hướng tới trang danh sách hãng sản xuất
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

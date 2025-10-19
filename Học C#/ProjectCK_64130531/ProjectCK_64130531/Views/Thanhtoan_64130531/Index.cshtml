@@ -1,0 +1,142 @@
+﻿@{
+    ViewBag.Title = "Thanh toán";
+}
+
+@model List<ProjectCK_64130531.Models.donmua>
+
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Thanh toán</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="/">Trang chủ<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#">Thanh toán</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+
+@{
+    var user = ViewBag.nguoidung; // Thông tin người dùng
+    var gioHang = Model; // Giỏ hàng truyền vào từ Controller
+}
+
+<section class="checkout_area section_gap">
+    <div class="container">
+        <div class="billing_details">
+            <div class="row">
+                <div class="col-lg-8">
+                    <h3>Thông tin thanh toán</h3>
+                    <form id="checkoutForm" class="row contact_form" novalidate="novalidate">
+                        <div class="col-md-6 form-group p_star">
+                            <input type="text" class="form-control" id="name" name="name" placeholder="Họ tên"
+                                   value="@(user?.Taikhoan ?? "")">
+                        </div>
+                        <div class="col-md-6 form-group p_star">
+                            <input type="text" class="form-control" id="sdt" name="sdt" placeholder="Số điện thoại"
+                                   value="@(user?.sdt ?? "")">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="email" class="form-control" id="email" name="email" placeholder="Email"
+                                   value="@(user?.Email ?? "")">
+                        </div>
+                        <div class="col-md-12 form-group p_star">
+                            <input type="text" class="form-control" id="add1" name="add1" placeholder="Địa chỉ nhận hàng"
+                                   value="@(user?.Diachi ?? "")">
+                        </div>
+                        <div class="col-md-12 form-group">
+                            <input type="text" class="form-control" id="add2" name="add2" placeholder="Địa chỉ phụ"
+                                   value="@(user?.diachinhanhang ?? "")">
+                        </div>
+                    </form>
+                </div>
+                <div class="col-lg-4">
+                    <div class="order_box">
+                        <h2>Đơn hàng của bạn</h2>
+                        <ul class="list">
+                            <li><a href="#">Sản phẩm <span>Tổng</span></a></li>
+                            @if (gioHang != null)
+                            {
+                                foreach (var item in gioHang)
+                                {
+                                    <li>
+                                        <a href="#">
+                                            @item.name
+                                            <span class="middle">x @item.soluong</span>
+                                            <span class="last">
+                                                @string.Format("{0:n0} VNĐ", Convert.ToDecimal(item.tien))
+                                            </span>
+                                        </a>
+                                    </li>
+                                }
+                            }
+                        </ul>
+                        <ul class="list list_2">
+                            <li><a href="#">Tổng cộng <span>@string.Format("{0:n0}", ViewBag.tongTien ?? 0)</span></a></li>
+                        </ul>
+                        <button class="primary-btn" type="button" onclick="sendRequest()">Thanh toán</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    function sendRequest() {
+        // Lấy thông tin từ các trường nhập liệu
+        const name = document.getElementById("name").value.trim();
+        const sdt = document.getElementById("sdt").value.trim();
+        const email = document.getElementById("email").value.trim();
+        const add1 = document.getElementById("add1").value.trim();
+        const add2 = document.getElementById("add2").value.trim();
+
+        // Chuyển đổi Model thành một mảng JSON gồm các thông tin cần thiết từ các đối tượng donmua
+        const gioHang = @Html.Raw(Json.Encode(Model));
+        const tongTien = parseFloat("@ViewBag.tongTien".replace(" VNĐ", "").replace(",", ""));
+
+        if (!gioHang || gioHang.length === 0) {
+            alert("Giỏ hàng của bạn đang trống.");
+            return;
+        }
+
+        // Tạo đối tượng request
+        const request = {
+            User: {
+                Taikhoan: name,
+                Ten: name,
+                sdt: sdt,
+                Email: email,
+                Diachi: add1,
+                diachinhanhang: add2
+            },
+            Ctdm: gioHang,
+            TongTien: tongTien
+        };
+
+        // Gửi AJAX request
+        $.ajax({
+            url: '@Url.Action("Thanhtoan", "Thanhtoan_64130531")',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(request),
+            success: function (response) {
+                if (response.success) {
+                    alert("Thanh toán thành công!");
+                    window.location.href = response.redirectUrl; // Điều hướng
+                } else {
+                    alert(response.message || "Đã xảy ra lỗi.");
+                }
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi: ", status, error);
+                console.error("Chi tiết: ", xhr.responseText);
+                alert("Không thể gửi yêu cầu!");
+            }
+        });
+    }
+</script>

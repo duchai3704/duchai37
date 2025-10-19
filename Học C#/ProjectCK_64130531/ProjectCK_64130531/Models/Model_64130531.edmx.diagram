@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="62862cc1daf8449cbf2ca38a02d8ce59" Name="Diagram1">
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Blog" Width="1.5" PointX="3" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Color" Width="1.5" PointX="3" PointY="8.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Comment" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Chitietsanpham" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Chitiethoadon" Width="1.5" PointX="10.5" PointY="1.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Danhmuc" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Hoadon" Width="1.5" PointX="8.25" PointY="10.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Khuyenmai" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Nhanhieu" Width="1.5" PointX="0.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Review" Width="1.5" PointX="8.25" PointY="1.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Sanpham" Width="1.5" PointX="3" PointY="0.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Size" Width="1.5" PointX="3" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Trangthai" Width="1.5" PointX="6" PointY="9.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="QLBanGiay_64130531Model.Users" Width="1.5" PointX="6" PointY="11.5" IsExpanded="true" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Blog__maDanhmuc__5812160E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Comment__maBlog__68487DD7" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Chitietsa__maMau__628FA481" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Comment__taikhoa__6754599E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Chitietsa__maSan__619B8048" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Chitietsa__maSiz__6383C8BA" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Chitietho__id_ch__778AC167" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Chitietho__maHoa__76969D2E" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Sanpham__maDanhm__5CD6CB2B" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Hoadon__id_Trang__71D1E811" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Hoadon__taikhoan__72C60C4A" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Sanpham__maKhuye__5DCAEF64" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Sanpham__maNhan__5BE2A6F2" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Review__maSanpha__6E01572D" ManuallyRouted="false" />
+        <AssociationConnector Association="QLBanGiay_64130531Model.FK__Review__taikhoan__6D0D32F4" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

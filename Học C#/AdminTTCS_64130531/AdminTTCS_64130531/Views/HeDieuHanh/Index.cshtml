@@ -1,0 +1,141 @@
+﻿@using AdminTTCS_64130531.Models
+@model IEnumerable<AdminTTCS_64130531.Models.Hedieuhanh>
+
+@{
+    ViewData["Title"] = "Danh Sách Hệ Điều Hành";
+}
+
+<h5 class="text-center">Danh Sách Hệ Điều Hành</h5>
+<div class="col-md-9">
+    <form method="post" asp-action="Create" asp-controller="HeDieuHanh">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="Mahdh">Mã hệ điều hành</label>
+                    <input id="Mahdh" asp-for="Mahdh" class="form-control" />
+                    <span asp-validation-for="Mahdh" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="Tenhdh">Tên hệ điều hành</label>
+                    <input id="Tenhdh" asp-for="Tenhdh" class="form-control" />
+                    <span asp-validation-for="Tenhdh" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnAddOS" onclick="addOS()" class="btn btn-primary">Thêm hệ điều hành</button>
+    </form>
+</div>
+
+<!-- Hiển thị bảng hệ điều hành -->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mã hệ điều hành</th>
+            <th scope="col">Tên hệ điều hành</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Mahdh</td>
+                    <td>@item.Tenhdh</td>
+                    <td>
+                        <div class="d-flex gap-2" style="margin-left: -65px;">
+                            <a asp-action="Edit" href="/HeDieuHanh/Edit?id=@item.Mahdh" class="btn btn-warning btn-sm" asp-controller="HeDieuHanh">Edit</a>
+                            <a asp-action="DeleteConfirmed" onclick="return confirm('Bạn có chắc chắn muốn xóa hệ điều hành này?') && deleteOS('@item.Mahdh')" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">Không có hệ điều hành nào được tìm thấy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+
+    function deleteOS(maOS) {
+        console.log("Xóa hệ điều hành có mã:", maOS);
+
+        var formData = {
+            id: maOS,
+        };
+
+        $.ajax({
+            url: '/HeDieuHanh/DeleteConfirmed',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Xóa hệ điều hành thành công');
+                window.location.href = '/HeDieuHanh/Index';
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+    function addOS() {
+        console.log("Thêm hệ điều hành");
+
+        // Lấy dữ liệu từ form
+        var Mahdh = $('#Mahdh').val();  // Lấy giá trị của trường mã hệ điều hành
+        var Tenhdh = $('#Tenhdh').val();  // Lấy giá trị của trường tên hệ điều hành
+
+        // Kiểm tra dữ liệu nhập
+        if (!Mahdh || !Tenhdh) {
+            alert('Vui lòng nhập đầy đủ thông tin mã và tên hệ điều hành.');
+            return;
+        }
+
+        // Console log dữ liệu nhập vào
+        console.log("Mã hệ điều hành:", Mahdh);
+        console.log("Tên hệ điều hành:", Tenhdh);
+
+        // Chuẩn bị dữ liệu để gửi qua AJAX
+        var formData = {
+            Mahdh: Mahdh,
+            Tenhdh: Tenhdh
+        };
+
+        // Gửi dữ liệu tới server qua AJAX
+        $.ajax({
+            url: '/HeDieuHanh/Create',  // URL tới Action trong Controller
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                console.log("Phản hồi từ server:", response); // Log phản hồi
+                alert('Hệ điều hành đã được thêm thành công!');
+                window.location.href = '/';  // Chuyển hướng sau khi thêm thành công
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+</script>

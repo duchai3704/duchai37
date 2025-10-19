@@ -1,0 +1,94 @@
+﻿@model IEnumerable<KT0720PhamDucHai_64130531.Models.SinhVien>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+    var grid = new WebGrid(Model, canPage: true, rowsPerPage: 5, selectionFieldName: "selectedRow", ajaxUpdateContainerId: "gridContent");
+    @Scripts.Render("~/Scripts/jquery-1.6.2.min.js")
+}
+
+
+<head>
+    <style type="text/css">
+        .grid-footer {
+            color: #000;
+            font: 17px Calibri;
+            text-align: center;
+            font-weight: bold;
+        }
+
+            .grid-footer a {
+                background-color: #ffffff;
+                color: blue;
+                box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                padding: 1px 10px 2px 10px;
+            }
+
+                .grid-footer a:active, a:hover {
+                    background-color: #ffffff;
+                    color: #FFAD33;
+                    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+                }
+
+        .alternatingRowStyle {
+            background-color: aliceblue;
+        }
+
+        table .table1 {
+            text-align: left;
+            margin-left: 0px;
+            margin-right: 0px;
+            width: 800px;
+        }
+
+        .tr, .td {
+            text-align: left;
+        }
+    </style>
+</head>
+
+<div id="gridContent" class="mt-3">
+    @if (ViewBag.TB != null)
+    {
+        <div class="alert alert-info">@ViewBag.TB</div>
+    }
+
+    @grid.GetHtml(
+        tableStyle: "table table-bordered table-hover",
+        footerStyle: "grid-footer",
+        fillEmptyRows: true,
+        mode: WebGridPagerModes.Numeric,
+        alternatingRowStyle: "alternatingRowStyle",
+        columns: grid.Columns(
+            grid.Column("STT", format: item => item.WebGrid.Rows.IndexOf(item) + 1 + Math.Round(Convert.ToDouble(grid.TotalRowCount / grid.PageCount) / grid.RowsPerPage) * grid.RowsPerPage * grid.PageIndex),
+            grid.Column("MaSV", "Mã Số Sinh Viên", canSort: true),
+            grid.Column("HoSV", "Họ", canSort: true),
+            grid.Column("TenSV", "Tên", canSort: true),
+            grid.Column("NgaySinh", "Ngày Sinh", canSort: true, format: @<text>@item.NgaySinh.ToString("dd/MM/yyyy")</text>),
+grid.Column("GioiTinh", "Giới Tính", canSort: true, format: @<text>@(item.GioiTinh ? "Nam" : "Nữ")</text>),
+grid.Column("AnhSV", "Ảnh sinh viên", canSort: false, style: "text-center", format: @<text>
+    @if (string.IsNullOrEmpty(item.AnhSV))
+    {
+        <span>Không có ảnh hiển thị</span>
+    }
+    else
+    {
+        <img src="@Url.Content("~/Images/" + item.AnhSV)" alt="Ảnh Sinh Viên" class="img-thumbnail" width="100" height="100" />
+    }
+</text>),
+grid.Column("DiaChi", "Địa Chỉ", canSort: true),
+grid.Column("Lop.TenLop", "Lớp", canSort: true),
+grid.Column("Actions", "Chức Năng", format: @<text>
+    @Html.ActionLink("SỬA", "Edit", "SinhVien0720_64130531", new { id = item.MaSV.Trim() }, new { @class = "btn btn-sm btn-outline-success me-2" }) 
+    @Html.ActionLink("XEM ", "Details", "SinhVien0720_64130531", new { id = item.MaSV.Trim() }, new { @class = "btn btn-sm btn-outline-info me-1" })
+    @Html.ActionLink("XÓA ", "Delete", "SinhVien0720_64130531", new { id = item.MaSV.Trim() }, new { @class = "btn btn-sm btn-outline-danger" })
+
+</text>)
+)
+)
+</div>
+
+<script type="text/javascript">
+    function clearFields() {
+        document.getElementById('MaSV').value = ''; document.getElementById('HoTen').value = '';
+    }</script>

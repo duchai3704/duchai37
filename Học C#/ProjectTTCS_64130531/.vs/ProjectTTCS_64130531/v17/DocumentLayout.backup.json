@@ -1,0 +1,137 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|d:\\h\u1ECDc c#\\projectttcs_64130531\\projectttcs_64130531\\views\\home_64130531\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\views\\home_64130531\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\projectttcs_64130531\\controllers\\thanhtoan_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\controllers\\thanhtoan_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\projectttcs_64130531\\views\\thanhtoan_64130531\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\views\\thanhtoan_64130531\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\projectttcs_64130531\\views\\history_64130531\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\views\\history_64130531\\history.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\projectttcs_64130531\\views\\category_64130531\\category_64130531.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\views\\category_64130531\\category_64130531.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\projectttcs_64130531\\controllers\\category_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\controllers\\category_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\projectttcs_64130531\\controllers\\home_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{13CBBEB0-026A-4E2D-837C-EEDF239CDEE8}|ProjectTTCS_64130531\\ProjectTTCS_64130531.csproj|solutionrelative:projectttcs_64130531\\controllers\\home_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\Home_64130531\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Views\\Home_64130531\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\Home_64130531\\Index.cshtml",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Views\\Home_64130531\\Index.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T01:29:37.074Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Thanhtoan_64130531Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Controllers\\Thanhtoan_64130531Controller.cs",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Controllers\\Thanhtoan_64130531Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Controllers\\Thanhtoan_64130531Controller.cs",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Controllers\\Thanhtoan_64130531Controller.cs",
+              "ViewState": "AgIAAG4AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-13T01:32:52.712Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\Thanhtoan_64130531\\Index.cshtml",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Views\\Thanhtoan_64130531\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\Thanhtoan_64130531\\Index.cshtml",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Views\\Thanhtoan_64130531\\Index.cshtml",
+              "ViewState": "AgIAAG8AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T01:31:59.212Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "History.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\History_64130531\\History.cshtml",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Views\\History_64130531\\History.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\History_64130531\\History.cshtml",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Views\\History_64130531\\History.cshtml",
+              "ViewState": "AgIAAI0AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-13T01:31:54.149Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Category_64130531.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\Category_64130531\\Category_64130531.cshtml",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Views\\Category_64130531\\Category_64130531.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Views\\Category_64130531\\Category_64130531.cshtml",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Views\\Category_64130531\\Category_64130531.cshtml",
+              "ViewState": "AgIAAHYBAAAAAAAAAAAgwMgAAABAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-01-05T05:31:20.659Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "Home_64130531Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Controllers\\Home_64130531Controller.cs",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Controllers\\Home_64130531Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Controllers\\Home_64130531Controller.cs",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Controllers\\Home_64130531Controller.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAxwC0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T05:34:00.938Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Category_64130531Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Controllers\\Category_64130531Controller.cs",
+              "RelativeDocumentMoniker": "ProjectTTCS_64130531\\Controllers\\Category_64130531Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\ProjectTTCS_64130531\\ProjectTTCS_64130531\\Controllers\\Category_64130531Controller.cs",
+              "RelativeToolTip": "ProjectTTCS_64130531\\Controllers\\Category_64130531Controller.cs",
+              "ViewState": "AgIAACAAAAAAAAAAAAAAADUAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-05T05:32:02.864Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

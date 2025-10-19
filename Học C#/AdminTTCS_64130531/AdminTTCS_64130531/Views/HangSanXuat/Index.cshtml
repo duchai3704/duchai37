@@ -1,0 +1,141 @@
+﻿@using AdminTTCS_64130531.Models
+@model IEnumerable<AdminTTCS_64130531.Models.Hangsanxuat>
+
+@{
+    ViewData["Title"] = "Danh Sách Hãng Sản Xuất";
+}
+
+<h5 class="text-center">Danh Sách Hãng Sản Xuất</h5>
+<div class="col-md-9">
+    <form method="post" asp-action="Create" asp-controller="HangSanXuat">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="Mahang">Mã hãng sản xuất</label>
+                    <input id="Mahang" asp-for="Mahang" class="form-control" />
+                    <span asp-validation-for="Mahang" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="Tenhang">Tên hãng sản xuất</label>
+                    <input id="Tenhang" asp-for="Tenhang" class="form-control" />
+                    <span asp-validation-for="Tenhang" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnAddProduct" onclick="addProduct()" class="btn btn-primary">Thêm hãng sản xuất</button>
+    </form>
+</div>
+
+<!-- Hiển thị bảng hãng sản xuất -->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mã hãng sản xuất</th>
+            <th scope="col">Tên hãng sản xuất</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.Mahang</td>
+                    <td>@item.Tenhang</td>
+                    <td>
+                        <div class="d-flex gap-2" style="margin-left: -65px;">
+                            <a asp-action="Edit" href="/HangSanXuat/Edit?id=@item.Mahang" class="btn btn-warning btn-sm" asp-controller="HangSanXuat">Edit</a>
+                            <a asp-action="DeleteConfirmed" onclick="return confirm('Bạn có chắc chắn muốn xóa hãng sản xuất này?') && deletesp('@item.Mahang')" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">Không có hãng sản xuất nào được tìm thấy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+
+    function deletesp(mahang) {
+        console.log("Xóa hãng sản xuất có mã:", mahang);
+
+        var formData = {
+            id: mahang,
+        };
+
+        $.ajax({
+            url: '/HangSanXuat/DeleteConfirmed',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Xóa hãng sản xuất thành công');
+                window.location.href = '/HangSanXuat/Index';
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+    function addProduct() {
+        console.log("Thêm hãng sản xuất");
+
+        // Lấy dữ liệu từ form
+        var Mahang = $('#Mahang').val();  // Lấy giá trị của trường mã hãng sản xuất
+        var Tenhang = $('#Tenhang').val();  // Lấy giá trị của trường tên hãng sản xuất
+
+        // Kiểm tra dữ liệu nhập
+        if (!Mahang || !Tenhang) {
+            alert('Vui lòng nhập đầy đủ thông tin mã hãng sản xuất và tên hãng sản xuất.');
+            return;
+        }
+
+        // Console log dữ liệu nhập vào
+        console.log("Mã hãng sản xuất:", Mahang);
+        console.log("Tên hãng sản xuất:", Tenhang);
+
+        // Chuẩn bị dữ liệu để gửi qua AJAX
+        var formData = {
+            Mahang: Mahang,
+            Tenhang: Tenhang
+        };
+
+        // Gửi dữ liệu tới server qua AJAX
+        $.ajax({
+            url: '/HangSanXuat/Create',  // URL tới Action trong Controller
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                console.log("Phản hồi từ server:", response); // Log phản hồi
+                alert('Hãng sản xuất đã được thêm thành công!');
+                window.location.href = '/HangSanXuat/Index';  // Chuyển hướng sau khi thêm thành công
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+</script>

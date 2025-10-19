@@ -1,0 +1,215 @@
+﻿@using AdminTTCS_64130531.Models
+@model IEnumerable<Sanpham>
+
+@{
+    ViewData["Title"] = "Danh Sách Sản Phẩm";
+}
+
+<h5 class="text-center">Danh Sách Sản Phẩm</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Create" asp-controller="SanPham">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <!-- Cột trái -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label>Mã sản phẩm</label>
+                    <input id="MaSanpham" asp-for="MaSanpham" class="form-control" />
+                    <span asp-validation-for="MaSanpham" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Tên sản phẩm</label>
+                    <input id="TenSanpham" asp-for="TenSanpham" class="form-control" />
+                    <span asp-validation-for="TenSanpham" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Mô tả</label>
+                    <textarea id="MoTa" asp-for="MoTa" class="form-control"></textarea>
+                    <span asp-validation-for="MoTa" class="text-danger"></span>
+                </div>
+
+            </div>
+
+            <!-- Cột phải -->
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label>Khuyến mãi</label>
+                    <select id="MaKhuyenmai" asp-for="MaKhuyenmai" asp-items="ViewBag.MaKhuyenmai" class="form-control">
+                        <option value="">-- Chọn khuyến mãi --</option>
+                        @foreach (var item in ViewBag.MaKhuyenmai)
+                        {
+                            <option value=@item.maKhuyenmai>@item.tenKhuyenmai</option>
+
+                        }
+                    </select>
+                    <span asp-validation-for="MaKhuyenmai" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Hệ điều hành</label>
+                    <select id="mahdh" asp-for="Mahdh" asp-items="ViewBag.mahdh" class="form-control">
+                        <option value="">-- Chọn hệ điều hành --</option>
+                        @foreach (var item in ViewBag.mahdh)
+                        {
+                            <option value=@item.Mahdh>@item.Tenhdh</option>
+
+                        }
+                    </select>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label>Hãng sản xuất</label>
+                    <select id="mahang" asp-for="Mahang" asp-items="ViewBag.mahang" class="form-control">
+                        <option value="">-- Chọn hãng sản xuất --</option>
+                        @foreach (var item in ViewBag.mahang)
+                        {
+                            <option value=@item.Mahang>@item.Tenhang</option>
+
+                        }
+                    </select>
+                    <span asp-validation-for="Mahang" class="text-danger"></span>
+                </div>
+            </div>
+
+        </div>
+
+
+
+    </form>
+    <button id="btnAddProduct" onclick="addProduct()" class="btn btn-primary">Thêm sản phẩm</button>
+</div>
+
+
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Tên</th>
+            <th scope="col">Mô tả</th>
+            <th scope="col">Hệ điều hành</th>
+            <th scope="col">Hãng sản xuất</th>
+            <th scope="col">Khuyến mãi</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <th scope="row">@index</th>
+                    <td>@item.tenSanpham</td>
+                    <td>@item.moTa</td>
+                    <td>@item.Hedieuhanh.Tenhdh</td>
+                    <td>@item.Hangsanxuat.Tenhang</td>
+                    <td>@item.Khuyenmai.tenKhuyenmai</td>
+                    <td>
+                    <td>
+                        <div class="d-flex gap-2" style="margin-left: -65px;">
+                            <a asp-action="Edit" href="/SanPham/Editsp?id=@item.maSanpham" class="btn btn-warning btn-sm" asp-controller="SanPham">Edit</a>
+                            <a asp-action="DeleteConfirmed" onclick="return confirm('Bạn có chắc chắn muốn xóa sản phẩm này?') && deletesp('@item.maSanpham')" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="8" class="text-center">Không có sản phẩm nào được tìm thấy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<script>
+
+    function deletesp(masanpham) {
+        console.log("Xóa sản phẩm có mã:", masanpham);
+
+        var formData = {
+            id: masanpham,  // Dùng tham số masanpham trong formData
+        };
+
+        $.ajax({
+            url: '/SanPham/DeleteConfirmed',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Xóa sản phẩm thành công');
+                window.location.href = '/SanPham/Index';
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+    // Tạo hàm addProduct()
+    function addProduct() {
+        console.log("hai");
+        // Lấy dữ liệu từ form
+        var maSanPham = $('#MaSanpham').val();  // Lấy giá trị của trường mã sản phẩm
+
+
+        var tenSanPham = $('#TenSanpham').val();  // Lấy giá trị của trường tên sản phẩm
+        var moTa = $('#MoTa').val();  // Lấy giá trị của trường mô tả
+
+        var Mahdh = document.getElementById('mahdh').selectedOptions[0].value;
+        var Mahang = document.getElementById('mahang').selectedOptions[0].value;
+        var maKhuyenmai = document.getElementById('MaKhuyenmai').selectedOptions[0].value;
+        // Console log tất cả các giá trị
+        console.log("Mã sản phẩm:", maSanPham);
+        console.log("Tên sản phẩm:", tenSanPham);
+        console.log("Mô tả:", moTa);
+        console.log("Mã khuyến mãi:", maKhuyenmai);
+        console.log("Mã hệ điều hành:", Mahdh);
+        console.log("Mã hãng sản xuất:", Mahang);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            maSanPham: maSanPham,
+            tenSanPham: tenSanPham,
+            moTa: moTa,
+            maKhuyenMai: maKhuyenmai,
+            Mahdh: Mahdh,
+            Mahang: Mahang
+        };
+
+        // Gửi dữ liệu formData đến controller qua AJAX (ví dụ gửi qua POST)
+        $.ajax({
+            url: '/SanPham/Create',  // URL tới Action trong Controller (Cập nhật URL phù hợp)
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                alert('Sản phẩm đã được thêm thành công!');
+                window.location.href = '/SanPham/Index';  // Chuyển hướng tới trang danh sách sản phẩm
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+
+
+
+</script>

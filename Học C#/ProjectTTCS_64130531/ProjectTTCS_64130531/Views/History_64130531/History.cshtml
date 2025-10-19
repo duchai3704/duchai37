@@ -1,0 +1,165 @@
+﻿@model List<ProjectTTCS_64130531.Models.HoadonK>
+
+@{
+    ViewBag.Title = "History Pages";
+}
+
+<style>
+    .custom-bg {
+        background-color: #FFB900 !important;
+    }
+
+    .nav-tabs .nav-link.active {
+        color: #FFFFFF !important;
+        font-weight: bold;
+    }
+
+    .nav-tabs .nav-link {
+        color: #000000 !important;
+    }
+</style>
+
+<!-- Banner Area -->
+<section class="banner-area organic-breadcrumb">
+    <div class="container">
+        <div class="breadcrumb-banner d-flex flex-wrap align-items-center justify-content-end">
+            <div class="col-first">
+                <h1>Information</h1>
+                <nav class="d-flex align-items-center">
+                    <a href="#">Home<span class="lnr lnr-arrow-right"></span></a>
+                    <a href="#">Login/History</a>
+                </nav>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- End Banner Area -->
+<!-- Information Area -->
+<section class="contact_area section_gap_bottom">
+    <div class="container">
+        <!-- Tab Navigation -->
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <button class="nav-link active custom-bg" id="history-tab" data-bs-toggle="tab" data-bs-target="#history" type="button" role="tab" aria-controls="history" aria-selected="false">Lịch sử mua hàng</button>
+            </li>
+        </ul>
+
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="history" role="tabpanel" aria-labelledby="history-tab">
+                <div class="card shadow-sm mt-3">
+                    <div class="card-header custom-bg text-white">
+                        <h4 class="mb-0">Lịch Sử Mua Hàng</h4>
+                    </div>
+                    <div class="card-body">
+                        <!-- Tab Navigation cho các trạng thái -->
+                        <ul class="nav nav-tabs" id="nestedTabs" role="tablist">
+                            <li class="nav-item">
+                                <button class="nav-link active custom-bg" id="processing-tab" data-bs-toggle="tab" data-bs-target="#processing" type="button" role="tab" aria-controls="processing" aria-selected="true">Đang xử lý</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link custom-bg" id="shipping-tab" data-bs-toggle="tab" data-bs-target="#shipping" type="button" role="tab" aria-controls="shipping" aria-selected="false">Đang giao</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link custom-bg" id="delivered-tab" data-bs-toggle="tab" data-bs-target="#delivered" type="button" role="tab" aria-controls="delivered" aria-selected="false">Đã giao</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link custom-bg" id="rate-tab" data-bs-toggle="tab" data-bs-target="#rate" type="button" role="tab" aria-controls="rate" aria-selected="false">Chưa đánh giá</button>
+                            </li>
+                            <li class="nav-item">
+                                <button class="nav-link custom-bg" id="rated-tab" data-bs-toggle="tab" data-bs-target="#rated" type="button" role="tab" aria-controls="rated" aria-selected="false">Đã đánh giá</button>
+                            </li>
+                        </ul>
+
+                        <!-- Nội dung của các tab con -->
+                        <div class="tab-content mt-3" id="nestedTabContent">
+                            @if (Model != null && Model.Any())
+                            {
+                                <!-- Đang xử lý -->
+                                <div class="tab-pane fade show active" id="processing" role="tabpanel" aria-labelledby="processing-tab">
+                                    <ul class="list-group">
+                                        @foreach (var item in Model.Where(m => m.IdTrangthai == 1))
+                                        {
+                                            <a href="@Url.Action("HistoryDetail", "History_64130531", new { mahd = item.MaHoadon.Trim() })">
+                                            <li class="list-group-item d-flex align-items-center">
+                                                <!-- Ảnh bên trái -->
+                                                <img src="~/img/hoadon.png" alt="Ảnh hóa đơn" class="img-thumbnail me-3" style="width: 100px; height: 100px; object-fit: cover;">
+
+                                                <!-- Nội dung bên phải -->
+                                                <div>
+                                                    <strong>Mã hóa đơn:</strong> @item.MaHoadon <br>
+                                                    <strong>Ngày tạo:</strong> @item.NgayTao <br>
+                                                    <strong>Ngày giao:</strong> @item.NgayGiao <br>
+                                                    <strong>Địa chỉ:</strong> @item.DiaChi <br>
+                                                    <strong>Tổng tiền:</strong> @item.TongTien VNĐ <br>
+                                                </div>
+                                            </li>
+                                            </a>
+                                        }
+                                    </ul>
+                                </div>
+
+                                <!-- Đang giao -->
+                                <div class="tab-pane fade" id="shipping" role="tabpanel" aria-labelledby="shipping-tab">
+                                    <ul class="list-group">
+                                        @foreach (var item in Model.Where(m => m.IdTrangthai == 2))
+                                        {
+                                            <a href="@Url.Action("HistoryDetail", "History_64130531", new { mahd = item.MaHoadon.Trim() })">
+                                            <li class="list-group-item d-flex align-items-center">
+                                                <!-- Ảnh bên trái -->
+                                                <img src="~/img/hoadon.png" alt="Ảnh hóa đơn" class="img-thumbnail me-3" style="width: 100px; height: 100px; object-fit: cover;">
+
+                                                <!-- Nội dung bên phải -->
+                                                <div>
+                                                    <strong>Mã hóa đơn:</strong> @item.MaHoadon <br>
+                                                    <strong>Ngày tạo:</strong> @item.NgayTao <br>
+                                                    <strong>Ngày giao:</strong> @item.NgayGiao <br>
+                                                    <strong>Địa chỉ:</strong> @item.DiaChi <br>
+                                                    <strong>Tổng tiền:</strong> @item.TongTien VNĐ <br>
+                                                </div>
+                                            </li>
+                                            </a>
+                                        }
+                                    </ul>
+                                </div>
+
+                                <!-- Đã giao -->
+                                <div class="tab-pane fade" id="delivered" role="tabpanel" aria-labelledby="delivered-tab">
+                                    <ul class="list-group">
+                                        @foreach (var item in Model.Where(m => m.IdTrangthai == 3))
+                                        {
+                                            <a href="@Url.Action("HistoryDetail", "History_64130531", new { mahd = item.MaHoadon.Trim() })">
+                                            <li class="list-group-item d-flex align-items-center">
+                                                <!-- Ảnh bên trái -->
+                                                <img src="~/img/hoadon.png" alt="Ảnh hóa đơn" class="img-thumbnail me-3" style="width: 100px; height: 100px; object-fit: cover;">
+
+                                                <!-- Nội dung bên phải -->
+                                                <div>
+                                                    <strong>Mã hóa đơn:</strong> @item.MaHoadon <br>
+                                                    <strong>Ngày tạo:</strong> @item.NgayTao <br>
+                                                    <strong>Ngày giao:</strong> @item.NgayGiao <br>
+                                                    <strong>Địa chỉ:</strong> @item.DiaChi <br>
+                                                    <strong>Tổng tiền:</strong> @item.TongTien VNĐ <br>
+                                                </div>
+                                            </li>
+                                            </a>
+                                        }
+                                    </ul>
+                                </div>
+
+                            }
+                            else
+                            {
+                                <p>Hiện tại không có đơn hàng nào.</p>
+                            }
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>

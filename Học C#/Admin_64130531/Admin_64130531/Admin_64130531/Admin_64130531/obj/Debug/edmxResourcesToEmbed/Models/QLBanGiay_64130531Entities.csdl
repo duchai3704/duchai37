@@ -1,0 +1,446 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="webbangiayModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Blog">
+    <Key>
+      <PropertyRef Name="maBlog" />
+    </Key>
+    <Property Name="maBlog" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tieude" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="noidung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ngaytao" Type="DateTime" Precision="0" />
+    <Property Name="hinhanh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="maDanhmuc" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Danhmuc" Relationship="Self.FK__Blog__maDanhmuc__59063A47" FromRole="Blog" ToRole="Danhmuc" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK__Comment__maBlog__693CA210" FromRole="Blog" ToRole="Comment" />
+  </EntityType>
+  <EntityType Name="Chitiethoadon">
+    <Key>
+      <PropertyRef Name="id_chitietHD" />
+    </Key>
+    <Property Name="id_chitietHD" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="maHoadon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="id_chitietSP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="soLuong" Type="Int32" />
+    <Property Name="trangThai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chitietsanpham" Relationship="Self.FK__Chitietho__id_ch__787EE5A0" FromRole="Chitiethoadon" ToRole="Chitietsanpham" />
+    <NavigationProperty Name="Hoadon" Relationship="Self.FK__Chitietho__maHoa__778AC167" FromRole="Chitiethoadon" ToRole="Hoadon" />
+  </EntityType>
+  <EntityType Name="Chitietsanpham">
+    <Key>
+      <PropertyRef Name="id_chitietSP" />
+    </Key>
+    <Property Name="id_chitietSP" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="hinhAnh" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="soLuongTon" Type="Int32" Nullable="false" />
+    <Property Name="gia" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="maMau" Type="Int32" Nullable="false" />
+    <Property Name="maSanpham" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="maSize" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Chitiethoadons" Relationship="Self.FK__Chitietho__id_ch__787EE5A0" FromRole="Chitietsanpham" ToRole="Chitiethoadon" />
+    <NavigationProperty Name="Color" Relationship="Self.FK__Chitietsa__maMau__6383C8BA" FromRole="Chitietsanpham" ToRole="Color" />
+    <NavigationProperty Name="Sanpham" Relationship="Self.FK__Chitietsa__maSan__628FA481" FromRole="Chitietsanpham" ToRole="Sanpham" />
+    <NavigationProperty Name="Size" Relationship="Self.FK__Chitietsa__maSiz__6477ECF3" FromRole="Chitietsanpham" ToRole="Size" />
+  </EntityType>
+  <EntityType Name="Color">
+    <Key>
+      <PropertyRef Name="maMau" />
+    </Key>
+    <Property Name="maMau" Type="Int32" Nullable="false" />
+    <Property Name="tenMau" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Chitietsanphams" Relationship="Self.FK__Chitietsa__maMau__6383C8BA" FromRole="Color" ToRole="Chitietsanpham" />
+  </EntityType>
+  <EntityType Name="Comment">
+    <Key>
+      <PropertyRef Name="maComment" />
+    </Key>
+    <Property Name="maComment" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="noiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ngayTao" Type="DateTime" Precision="0" />
+    <Property Name="ma_cmCha" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="taikhoan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="maBlog" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Blog" Relationship="Self.FK__Comment__maBlog__693CA210" FromRole="Comment" ToRole="Blog" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Comment__taikhoa__68487DD7" FromRole="Comment" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Danhmuc">
+    <Key>
+      <PropertyRef Name="maDanhmuc" />
+    </Key>
+    <Property Name="maDanhmuc" Type="Int32" Nullable="false" />
+    <Property Name="tenDanhmuc" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Blogs" Relationship="Self.FK__Blog__maDanhmuc__59063A47" FromRole="Danhmuc" ToRole="Blog" />
+    <NavigationProperty Name="Sanphams" Relationship="Self.FK__Sanpham__maDanhm__5DCAEF64" FromRole="Danhmuc" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="Hoadon">
+    <Key>
+      <PropertyRef Name="maHoadon" />
+    </Key>
+    <Property Name="maHoadon" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="diaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="ngayTao" Type="DateTime" Precision="0" />
+    <Property Name="ngayGiao" Type="DateTime" Precision="0" />
+    <Property Name="id_Trangthai" Type="Int32" Nullable="false" />
+    <Property Name="tongTien" Type="Decimal" Precision="10" Scale="2" />
+    <Property Name="taikhoan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="Chitiethoadons" Relationship="Self.FK__Chitietho__maHoa__778AC167" FromRole="Hoadon" ToRole="Chitiethoadon" />
+    <NavigationProperty Name="Trangthai" Relationship="Self.FK__Hoadon__id_Trang__72C60C4A" FromRole="Hoadon" ToRole="Trangthai" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Hoadon__taikhoan__73BA3083" FromRole="Hoadon" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Khuyenmai">
+    <Key>
+      <PropertyRef Name="maKhuyenmai" />
+    </Key>
+    <Property Name="maKhuyenmai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tenKhuyenmai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="phanTram" Type="Double" />
+    <NavigationProperty Name="Sanphams" Relationship="Self.FK__Sanpham__maKhuye__5EBF139D" FromRole="Khuyenmai" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="Nhanhieu">
+    <Key>
+      <PropertyRef Name="maNhan" />
+    </Key>
+    <Property Name="maNhan" Type="Int32" Nullable="false" />
+    <Property Name="tenNhan" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Sanphams" Relationship="Self.FK__Sanpham__maNhan__5CD6CB2B" FromRole="Nhanhieu" ToRole="Sanpham" />
+  </EntityType>
+  <EntityType Name="Review">
+    <Key>
+      <PropertyRef Name="maReview" />
+    </Key>
+    <Property Name="maReview" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="noiDung" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="ngayNhap" Type="DateTime" Precision="0" />
+    <Property Name="soSao" Type="Int32" Nullable="false" />
+    <Property Name="taikhoan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="maSanpham" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Sanpham" Relationship="Self.FK__Review__maSanpha__6EF57B66" FromRole="Review" ToRole="Sanpham" />
+    <NavigationProperty Name="User" Relationship="Self.FK__Review__taikhoan__6E01572D" FromRole="Review" ToRole="Users" />
+  </EntityType>
+  <EntityType Name="Sanpham">
+    <Key>
+      <PropertyRef Name="maSanpham" />
+    </Key>
+    <Property Name="maSanpham" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="tenSanpham" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="moTa" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+    <Property Name="soLuongyeuthich" Type="Int32" Nullable="false" />
+    <Property Name="maNhan" Type="Int32" Nullable="false" />
+    <Property Name="maDanhmuc" Type="Int32" Nullable="false" />
+    <Property Name="maKhuyenmai" Type="String" MaxLength="10" FixedLength="true" Unicode="false" Nullable="false" />
+    <NavigationProperty Name="Chitietsanphams" Relationship="Self.FK__Chitietsa__maSan__628FA481" FromRole="Sanpham" ToRole="Chitietsanpham" />
+    <NavigationProperty Name="Danhmuc" Relationship="Self.FK__Sanpham__maDanhm__5DCAEF64" FromRole="Sanpham" ToRole="Danhmuc" />
+    <NavigationProperty Name="Khuyenmai" Relationship="Self.FK__Sanpham__maKhuye__5EBF139D" FromRole="Sanpham" ToRole="Khuyenmai" />
+    <NavigationProperty Name="Nhanhieu" Relationship="Self.FK__Sanpham__maNhan__5CD6CB2B" FromRole="Sanpham" ToRole="Nhanhieu" />
+    <NavigationProperty Name="Reviews" Relationship="Self.FK__Review__maSanpha__6EF57B66" FromRole="Sanpham" ToRole="Review" />
+  </EntityType>
+  <EntityType Name="Size">
+    <Key>
+      <PropertyRef Name="maSize" />
+    </Key>
+    <Property Name="maSize" Type="Int32" Nullable="false" />
+    <Property Name="chieudai" Type="Double" />
+    <Property Name="chieurong" Type="Double" />
+    <Property Name="chieucao" Type="Double" />
+    <NavigationProperty Name="Chitietsanphams" Relationship="Self.FK__Chitietsa__maSiz__6477ECF3" FromRole="Size" ToRole="Chitietsanpham" />
+  </EntityType>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="THOIGIANDK">
+    <Key>
+      <PropertyRef Name="maTG" />
+    </Key>
+    <Property Name="maTG" Type="String" MaxLength="12" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="thu" Type="String" MaxLength="9" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="tuTiet" Type="Int32" Nullable="false" />
+    <Property Name="denTiet" Type="Int32" Nullable="false" />
+    <Property Name="TGBD" Type="DateTime" Nullable="false" Precision="0" />
+  </EntityType>
+  <EntityType Name="Trangthai">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" />
+    <Property Name="tenTrangthai" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Hoadons" Relationship="Self.FK__Hoadon__id_Trang__72C60C4A" FromRole="Trangthai" ToRole="Hoadon" />
+  </EntityType>
+  <EntityType Name="User">
+    <Key>
+      <PropertyRef Name="taikhoan" />
+    </Key>
+    <Property Name="taikhoan" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="matkhau" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ten" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="sdt" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="email" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="diaChi" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Comments" Relationship="Self.FK__Comment__taikhoa__68487DD7" FromRole="Users" ToRole="Comment" />
+    <NavigationProperty Name="Hoadons" Relationship="Self.FK__Hoadon__taikhoan__73BA3083" FromRole="Users" ToRole="Hoadon" />
+    <NavigationProperty Name="Reviews" Relationship="Self.FK__Review__taikhoan__6E01572D" FromRole="Users" ToRole="Review" />
+  </EntityType>
+  <Association Name="FK__Blog__maDanhmuc__59063A47">
+    <End Role="Danhmuc" Type="Self.Danhmuc" Multiplicity="1" />
+    <End Role="Blog" Type="Self.Blog" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc">
+        <PropertyRef Name="maDanhmuc" />
+      </Principal>
+      <Dependent Role="Blog">
+        <PropertyRef Name="maDanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__maBlog__693CA210">
+    <End Role="Blog" Type="Self.Blog" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Blog">
+        <PropertyRef Name="maBlog" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="maBlog" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietho__id_ch__787EE5A0">
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="0..1" />
+    <End Role="Chitiethoadon" Type="Self.Chitiethoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Chitietsanpham">
+        <PropertyRef Name="id_chitietSP" />
+      </Principal>
+      <Dependent Role="Chitiethoadon">
+        <PropertyRef Name="id_chitietSP" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietho__maHoa__778AC167">
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="0..1" />
+    <End Role="Chitiethoadon" Type="Self.Chitiethoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Hoadon">
+        <PropertyRef Name="maHoadon" />
+      </Principal>
+      <Dependent Role="Chitiethoadon">
+        <PropertyRef Name="maHoadon" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietsa__maMau__6383C8BA">
+    <End Role="Color" Type="Self.Color" Multiplicity="1" />
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Color">
+        <PropertyRef Name="maMau" />
+      </Principal>
+      <Dependent Role="Chitietsanpham">
+        <PropertyRef Name="maMau" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietsa__maSan__628FA481">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="1" />
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="maSanpham" />
+      </Principal>
+      <Dependent Role="Chitietsanpham">
+        <PropertyRef Name="maSanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Chitietsa__maSiz__6477ECF3">
+    <End Role="Size" Type="Self.Size" Multiplicity="1" />
+    <End Role="Chitietsanpham" Type="Self.Chitietsanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Size">
+        <PropertyRef Name="maSize" />
+      </Principal>
+      <Dependent Role="Chitietsanpham">
+        <PropertyRef Name="maSize" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Comment__taikhoa__68487DD7">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Comment" Type="Self.Comment" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="taikhoan" />
+      </Principal>
+      <Dependent Role="Comment">
+        <PropertyRef Name="taikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sanpham__maDanhm__5DCAEF64">
+    <End Role="Danhmuc" Type="Self.Danhmuc" Multiplicity="1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Danhmuc">
+        <PropertyRef Name="maDanhmuc" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="maDanhmuc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadon__id_Trang__72C60C4A">
+    <End Role="Trangthai" Type="Self.Trangthai" Multiplicity="1" />
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Trangthai">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="Hoadon">
+        <PropertyRef Name="id_Trangthai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Hoadon__taikhoan__73BA3083">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Hoadon" Type="Self.Hoadon" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="taikhoan" />
+      </Principal>
+      <Dependent Role="Hoadon">
+        <PropertyRef Name="taikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sanpham__maKhuye__5EBF139D">
+    <End Role="Khuyenmai" Type="Self.Khuyenmai" Multiplicity="1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Khuyenmai">
+        <PropertyRef Name="maKhuyenmai" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="maKhuyenmai" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Sanpham__maNhan__5CD6CB2B">
+    <End Role="Nhanhieu" Type="Self.Nhanhieu" Multiplicity="1" />
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Nhanhieu">
+        <PropertyRef Name="maNhan" />
+      </Principal>
+      <Dependent Role="Sanpham">
+        <PropertyRef Name="maNhan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Review__maSanpha__6EF57B66">
+    <End Role="Sanpham" Type="Self.Sanpham" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sanpham">
+        <PropertyRef Name="maSanpham" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="maSanpham" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Review__taikhoan__6E01572D">
+    <End Role="Users" Type="Self.User" Multiplicity="1" />
+    <End Role="Review" Type="Self.Review" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Users">
+        <PropertyRef Name="taikhoan" />
+      </Principal>
+      <Dependent Role="Review">
+        <PropertyRef Name="taikhoan" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="webbangiayEntities2" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Blogs" EntityType="Self.Blog" />
+    <EntitySet Name="Chitiethoadons" EntityType="Self.Chitiethoadon" />
+    <EntitySet Name="Chitietsanphams" EntityType="Self.Chitietsanpham" />
+    <EntitySet Name="Colors" EntityType="Self.Color" />
+    <EntitySet Name="Comments" EntityType="Self.Comment" />
+    <EntitySet Name="Danhmucs" EntityType="Self.Danhmuc" />
+    <EntitySet Name="Hoadons" EntityType="Self.Hoadon" />
+    <EntitySet Name="Khuyenmais" EntityType="Self.Khuyenmai" />
+    <EntitySet Name="Nhanhieux" EntityType="Self.Nhanhieu" />
+    <EntitySet Name="Reviews" EntityType="Self.Review" />
+    <EntitySet Name="Sanphams" EntityType="Self.Sanpham" />
+    <EntitySet Name="Sizes" EntityType="Self.Size" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
+    <EntitySet Name="THOIGIANDKs" EntityType="Self.THOIGIANDK" />
+    <EntitySet Name="Trangthais" EntityType="Self.Trangthai" />
+    <EntitySet Name="Users" EntityType="Self.User" />
+    <AssociationSet Name="FK__Blog__maDanhmuc__59063A47" Association="Self.FK__Blog__maDanhmuc__59063A47">
+      <End Role="Danhmuc" EntitySet="Danhmucs" />
+      <End Role="Blog" EntitySet="Blogs" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__maBlog__693CA210" Association="Self.FK__Comment__maBlog__693CA210">
+      <End Role="Blog" EntitySet="Blogs" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietho__id_ch__787EE5A0" Association="Self.FK__Chitietho__id_ch__787EE5A0">
+      <End Role="Chitietsanpham" EntitySet="Chitietsanphams" />
+      <End Role="Chitiethoadon" EntitySet="Chitiethoadons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietho__maHoa__778AC167" Association="Self.FK__Chitietho__maHoa__778AC167">
+      <End Role="Hoadon" EntitySet="Hoadons" />
+      <End Role="Chitiethoadon" EntitySet="Chitiethoadons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietsa__maMau__6383C8BA" Association="Self.FK__Chitietsa__maMau__6383C8BA">
+      <End Role="Color" EntitySet="Colors" />
+      <End Role="Chitietsanpham" EntitySet="Chitietsanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietsa__maSan__628FA481" Association="Self.FK__Chitietsa__maSan__628FA481">
+      <End Role="Sanpham" EntitySet="Sanphams" />
+      <End Role="Chitietsanpham" EntitySet="Chitietsanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Chitietsa__maSiz__6477ECF3" Association="Self.FK__Chitietsa__maSiz__6477ECF3">
+      <End Role="Size" EntitySet="Sizes" />
+      <End Role="Chitietsanpham" EntitySet="Chitietsanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Comment__taikhoa__68487DD7" Association="Self.FK__Comment__taikhoa__68487DD7">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Comment" EntitySet="Comments" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sanpham__maDanhm__5DCAEF64" Association="Self.FK__Sanpham__maDanhm__5DCAEF64">
+      <End Role="Danhmuc" EntitySet="Danhmucs" />
+      <End Role="Sanpham" EntitySet="Sanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadon__id_Trang__72C60C4A" Association="Self.FK__Hoadon__id_Trang__72C60C4A">
+      <End Role="Trangthai" EntitySet="Trangthais" />
+      <End Role="Hoadon" EntitySet="Hoadons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Hoadon__taikhoan__73BA3083" Association="Self.FK__Hoadon__taikhoan__73BA3083">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Hoadon" EntitySet="Hoadons" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sanpham__maKhuye__5EBF139D" Association="Self.FK__Sanpham__maKhuye__5EBF139D">
+      <End Role="Khuyenmai" EntitySet="Khuyenmais" />
+      <End Role="Sanpham" EntitySet="Sanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Sanpham__maNhan__5CD6CB2B" Association="Self.FK__Sanpham__maNhan__5CD6CB2B">
+      <End Role="Nhanhieu" EntitySet="Nhanhieux" />
+      <End Role="Sanpham" EntitySet="Sanphams" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Review__maSanpha__6EF57B66" Association="Self.FK__Review__maSanpha__6EF57B66">
+      <End Role="Sanpham" EntitySet="Sanphams" />
+      <End Role="Review" EntitySet="Reviews" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Review__taikhoan__6E01572D" Association="Self.FK__Review__taikhoan__6E01572D">
+      <End Role="Users" EntitySet="Users" />
+      <End Role="Review" EntitySet="Reviews" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

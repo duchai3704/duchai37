@@ -1,0 +1,742 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|d:\\h\u1ECDc c#\\project_63131920\\project_63131920\\project_63131920\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\areas\\admin\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\shared\\lockout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\shared\\lockout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\home_63131920\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\home_63131920\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\areas\\admin\\controllers\\users_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\areas\\admin\\controllers\\users_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\app_start\\routeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\app_start\\startup.auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\app_start\\startup.auth.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\login.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\forgotpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\forgotpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\externalloginfailure.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\externalloginfailure.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\externalloginconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\externalloginconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\confirmemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\_externalloginslistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\_externalloginslistpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\controllers\\accountcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\controllers\\category_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\controllers\\category_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\controllers\\home_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\controllers\\home_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\controllers\\managecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\controllers\\managecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\category_63131920\\productcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\category_63131920\\productcategory.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\controllers\\product_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\controllers\\product_63131920controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\models\\homemodel_63131920.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\models\\homemodel_63131920.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\assets\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\assets\\js\\script.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\assets\\js\\jquery-2.0.0.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\assets\\js\\jquery-2.0.0.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\assets\\js\\bootstrap.bundle.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\assets\\js\\bootstrap.bundle.min.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\assets\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\assets\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\product_63131920\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\product_63131920\\detail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\models\\mapproduct_63131920.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\models\\mapproduct_63131920.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\models\\manageviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\models\\identitymodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\models\\accountviewmodels.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\manage\\setpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\manage\\setpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\manage\\changepassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\manage\\verifyphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\manage\\verifyphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\manage\\managelogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\manage\\managelogins.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\manage\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\manage\\addphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\manage\\addphonenumber.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\verifycode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\verifycode.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\resetpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\resetpasswordconfirmation.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\resetpassword.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\account\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\views\\home_63131920\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\views\\home_63131920\\register.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\project_63131920\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
+      "RelativeMoniker": "D:0:0:{1213F794-D152-47E3-A723-29F7BA6A5BDB}|Project_63131920\\Project_63131920.csproj|solutionrelative:project_63131920\\web.config||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 4,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Project_63131920\\Areas\\Admin\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAB4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-30T16:47:33.906Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "ExternalLoginFailure.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ExternalLoginFailure.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ExternalLoginFailure.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ExternalLoginFailure.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ExternalLoginFailure.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:07.981Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "ForgotPassword.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ForgotPassword.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ForgotPassword.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ForgotPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:09.207Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ForgotPasswordConfirmation.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ForgotPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:10.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Home_63131920\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Home_63131920\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Home_63131920\\Index.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Home_63131920\\Index.cshtml",
+              "ViewState": "AgIAAJcAAAAAAAAAAAAhwJ4AAAAdAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T12:14:37.607Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-06T07:31:32.98Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Lockout.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\Lockout.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Shared\\Lockout.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\Lockout.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Shared\\Lockout.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:28.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAKQAAAAAAAAAAAAiwLsAAABOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T12:15:27.992Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "RouteConfig.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\App_Start\\RouteConfig.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\App_Start\\RouteConfig.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\App_Start\\RouteConfig.cs",
+              "RelativeToolTip": "Project_63131920\\App_Start\\RouteConfig.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAA9AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T07:40:42.872Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Startup.Auth.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\App_Start\\Startup.Auth.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\App_Start\\Startup.Auth.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\App_Start\\Startup.Auth.cs",
+              "RelativeToolTip": "Project_63131920\\App_Start\\Startup.Auth.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T07:40:42.24Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Users_63131920Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Areas\\Admin\\Controllers\\Users_63131920Controller.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Areas\\Admin\\Controllers\\Users_63131920Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Areas\\Admin\\Controllers\\Users_63131920Controller.cs",
+              "RelativeToolTip": "Project_63131920\\Areas\\Admin\\Controllers\\Users_63131920Controller.cs",
+              "ViewState": "AgIAAGsAAAAAAAAAAAAswAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-14T07:41:26.382Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Login.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\Login.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\Login.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\Login.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\Login.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:11.338Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "ExternalLoginConfirmation.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ExternalLoginConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:04.28Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "ConfirmEmail.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ConfirmEmail.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ConfirmEmail.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ConfirmEmail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:02.35Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_ExternalLoginsListPartial.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\_ExternalLoginsListPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:00.883Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "AccountController.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\AccountController.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Controllers\\AccountController.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\AccountController.cs",
+              "RelativeToolTip": "Project_63131920\\Controllers\\AccountController.cs",
+              "ViewState": "AgIAAJUAAAAAAAAAAAA0wAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:01:01.944Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "Category_63131920Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\Category_63131920Controller.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Controllers\\Category_63131920Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\Category_63131920Controller.cs",
+              "RelativeToolTip": "Project_63131920\\Controllers\\Category_63131920Controller.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABEAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T13:43:20.145Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "Home_63131920Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\Home_63131920Controller.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Controllers\\Home_63131920Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\Home_63131920Controller.cs",
+              "RelativeToolTip": "Project_63131920\\Controllers\\Home_63131920Controller.cs",
+              "ViewState": "AgIAAFAAAAAAAAAAAAAswBcAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T12:16:45.347Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "ManageController.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\ManageController.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Controllers\\ManageController.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\ManageController.cs",
+              "RelativeToolTip": "Project_63131920\\Controllers\\ManageController.cs",
+              "ViewState": "AgIAADYAAAAAAAAAAAAuwDYAAAAtAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-02T13:43:28.849Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "Product_63131920Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\Product_63131920Controller.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Controllers\\Product_63131920Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Controllers\\Product_63131920Controller.cs",
+              "RelativeToolTip": "Project_63131920\\Controllers\\Product_63131920Controller.cs",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAA0AAAAfAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:00:56.461Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ProductCategory.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Category_63131920\\ProductCategory.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Category_63131920\\ProductCategory.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Category_63131920\\ProductCategory.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Category_63131920\\ProductCategory.cshtml",
+              "ViewState": "AgIAAFIAAAAAAAAAAAAowGQAAAAvAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T12:15:17.164Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "HomeModel_63131920.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\HomeModel_63131920.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Models\\HomeModel_63131920.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\HomeModel_63131920.cs",
+              "RelativeToolTip": "Project_63131920\\Models\\HomeModel_63131920.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:08:39.344Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Detail.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Product_63131920\\Detail.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Product_63131920\\Detail.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Product_63131920\\Detail.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Product_63131920\\Detail.cshtml",
+              "ViewState": "AgIAACEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:25:03.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "mapProduct_63131920.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\mapProduct_63131920.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Models\\mapProduct_63131920.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\mapProduct_63131920.cs",
+              "RelativeToolTip": "Project_63131920\\Models\\mapProduct_63131920.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:08:46.893Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "Project_63131920\\Assets\\css\\bootstrap.css",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\css\\bootstrap.css",
+              "RelativeToolTip": "Project_63131920\\Assets\\css\\bootstrap.css",
+              "ViewState": "AgIAAGQBAAAAAAAAAAArwHMBAAAOAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-12-04T09:54:45.973Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "bootstrap.bundle.min.js",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\js\\bootstrap.bundle.min.js",
+              "RelativeDocumentMoniker": "Project_63131920\\Assets\\js\\bootstrap.bundle.min.js",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\js\\bootstrap.bundle.min.js",
+              "RelativeToolTip": "Project_63131920\\Assets\\js\\bootstrap.bundle.min.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-04T09:55:34.136Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "script.js",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\js\\script.js",
+              "RelativeDocumentMoniker": "Project_63131920\\Assets\\js\\script.js",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\js\\script.js",
+              "RelativeToolTip": "Project_63131920\\Assets\\js\\script.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-04T09:55:38.021Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "jquery-2.0.0.min.js",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\js\\jquery-2.0.0.min.js",
+              "RelativeDocumentMoniker": "Project_63131920\\Assets\\js\\jquery-2.0.0.min.js",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Assets\\js\\jquery-2.0.0.min.js",
+              "RelativeToolTip": "Project_63131920\\Assets\\js\\jquery-2.0.0.min.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-12-04T09:55:36.746Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 28,
+              "Title": "ManageViewModels.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\ManageViewModels.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Models\\ManageViewModels.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\ManageViewModels.cs",
+              "RelativeToolTip": "Project_63131920\\Models\\ManageViewModels.cs",
+              "ViewState": "AgIAABgAAAAAAAAAAAAIwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:09:18.205Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 29,
+              "Title": "IdentityModels.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\IdentityModels.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Models\\IdentityModels.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\IdentityModels.cs",
+              "RelativeToolTip": "Project_63131920\\Models\\IdentityModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:09:14.293Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 30,
+              "Title": "AccountViewModels.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\AccountViewModels.cs",
+              "RelativeDocumentMoniker": "Project_63131920\\Models\\AccountViewModels.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Models\\AccountViewModels.cs",
+              "RelativeToolTip": "Project_63131920\\Models\\AccountViewModels.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-12-04T08:09:09.521Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 33,
+              "Title": "VerifyPhoneNumber.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Manage\\VerifyPhoneNumber.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:30.85Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 32,
+              "Title": "ChangePassword.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\ChangePassword.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Manage\\ChangePassword.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\ChangePassword.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Manage\\ChangePassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:53:24.927Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 34,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Shared\\Error.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T12:46:26.666Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 31,
+              "Title": "SetPassword.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\SetPassword.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Manage\\SetPassword.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\SetPassword.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Manage\\SetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:53:39.06Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 35,
+              "Title": "ManageLogins.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\ManageLogins.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Manage\\ManageLogins.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\ManageLogins.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Manage\\ManageLogins.cshtml",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:36.766Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 36,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\Index.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Manage\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\Index.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Manage\\Index.cshtml",
+              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:25:05.649Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 37,
+              "Title": "AddPhoneNumber.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\AddPhoneNumber.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Manage\\AddPhoneNumber.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Manage\\AddPhoneNumber.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Manage\\AddPhoneNumber.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:53:21.993Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 39,
+              "Title": "ResetPasswordConfirmation.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ResetPasswordConfirmation.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:14.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 38,
+              "Title": "VerifyCode.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\VerifyCode.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\VerifyCode.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\VerifyCode.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\VerifyCode.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:48.815Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 40,
+              "Title": "ResetPassword.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\ResetPassword.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\ResetPassword.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\ResetPassword.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:13.664Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 41,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\Register.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Account\\Register.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Account\\Register.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Account\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T13:50:12.694Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 42,
+              "Title": "Register.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Home_63131920\\Register.cshtml",
+              "RelativeDocumentMoniker": "Project_63131920\\Views\\Home_63131920\\Register.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Views\\Home_63131920\\Register.cshtml",
+              "RelativeToolTip": "Project_63131920\\Views\\Home_63131920\\Register.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-12-02T12:46:31.128Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 43,
+              "Title": "Web.config",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Web.config",
+              "RelativeDocumentMoniker": "Project_63131920\\Web.config",
+              "ToolTip": "D:\\H\u1ECDc C#\\Project_63131920\\Project_63131920\\Project_63131920\\Web.config",
+              "RelativeToolTip": "Project_63131920\\Web.config",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAYAQAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000601|",
+              "WhenOpened": "2024-11-28T14:00:32.017Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

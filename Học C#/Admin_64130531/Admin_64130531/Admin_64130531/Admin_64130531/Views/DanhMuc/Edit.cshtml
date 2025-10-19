@@ -1,0 +1,73 @@
+﻿@using Admin_64130531.Models
+@model Danhmuc
+@{
+    ViewData["Title"] = "Danh Sách Danh Mục";
+}
+
+<h5 class="text-center">Cập Nhật Danh Mục</h5>
+<div class="col-md-9">
+    <form enctype="multipart/form-data" method="post" asp-action="Create" asp-controller="SanPham">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="maDanhmuc">Mã danh mục</label>
+                    <input id="maDanhmuc" asp-for="maDanhmuc" value="@ViewBag.maDanhmuc" class="form-control" readonly/>
+                    <span asp-validation-for="maDanhmuc" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="tenDanhmuc">Tên danh mục</label>
+                    <input id="tenDanhmuc" asp-for="tenDanhmuc" value="@ViewBag.tenDanhmuc" class="form-control" />
+                    <span asp-validation-for="tenDanhmuc" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+    </form>
+    <button id="btnAddProduct" onclick="Saveedit()" class="btn btn-primary">Lưu</button>
+</div>
+
+
+<script>
+
+
+    function Saveedit() {
+        console.log("Cập nhật danh mục...");
+
+        // Lấy dữ liệu từ form
+        var maDanhMuc = $('#maDanhmuc').val();  // Lấy giá trị của trường mã danh mục
+        var tenDanhMuc = $('#tenDanhmuc').val();  // Lấy giá trị của trường tên danh mục
+
+        // Console log tất cả các giá trị
+        console.log("Mã danh mục:", maDanhMuc);
+        console.log("Tên danh mục:", tenDanhMuc);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            maDanhMuc: maDanhMuc,
+            tenDanhMuc: tenDanhMuc
+        };
+
+        $.ajax({
+            url: '/DanhMuc/Edit',  // URL tới Action trong Controller (Cập nhật URL phù hợp)
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                // Xử lý khi gửi thành công (có thể chuyển hướng hoặc hiển thị thông báo)
+                alert('Cập nhật danh mục thành công!');
+                window.location.href = '/DanhMuc/Index';  // Chuyển hướng tới trang danh sách danh mục
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+</script>

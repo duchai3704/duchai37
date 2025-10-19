@@ -1,0 +1,140 @@
+﻿@using Admin_64130531.Models
+@model IEnumerable<Admin_64130531.Models.Nhanhieu>
+
+@{
+    ViewData["Title"] = "Danh Sách Nhãn Hiệu";
+}
+
+<h5 class="text-center">Danh Sách Nhãn Hiệu</h5>
+<div class="col-md-9">
+    <form method="post" asp-action="Create" asp-controller="Nhanhieu">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="maNhan">Mã nhãn hiệu</label>
+                    <input id="maNhan" asp-for="maNhan" class="form-control" />
+                    <span asp-validation-for="maNhan" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="tenNhan">Tên nhãn hiệu</label>
+                    <input id="tenNhan" asp-for="tenNhan" class="form-control" />
+                    <span asp-validation-for="tenNhan" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnAddBrand" onclick="addBrand()" class="btn btn-primary">Thêm nhãn hiệu</button>
+    </form>
+</div>
+
+<!-- Hiển thị bảng nhãn hiệu -->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mã nhãn hiệu</th>
+            <th scope="col">Tên nhãn hiệu</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.maNhan</td>
+                    <td>@item.tenNhan</td>
+                    <td>
+                        <div class="d-flex gap-2" style="margin-left: -65px;">
+                            <a asp-action="Edit" href="/Nhanhieu/Edit?id=@item.maNhan" class="btn btn-warning btn-sm" asp-controller="Nhanhieu">Edit</a>
+                            <a asp-action="DeleteConfirmed" onclick="return confirm('Bạn có chắc chắn muốn xóa nhãn hiệu này?') && deleteBrand('@item.maNhan')" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">Không có nhãn hiệu nào được tìm thấy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<script>
+    function deleteBrand(maNhan) {
+        console.log("Xóa nhãn hiệu có mã:", maNhan);
+
+        var formData = {
+            id: maNhan,
+        };
+
+        $.ajax({
+            url: '/Nhanhieu/DeleteConfirmed',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Xóa nhãn hiệu thành công');
+                window.location.href = '/Nhanhieu/Index';
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+    function addBrand() {
+        console.log("Thêm nhãn hiệu");
+
+        // Lấy dữ liệu từ form
+        var maNhan = $('#maNhan').val();  // Lấy giá trị của trường mã nhãn hiệu
+        var tenNhan = $('#tenNhan').val();  // Lấy giá trị của trường tên nhãn hiệu
+
+        // Kiểm tra dữ liệu nhập
+        if (!maNhan || !tenNhan) {
+            alert('Vui lòng nhập đầy đủ thông tin mã nhãn hiệu và tên nhãn hiệu.');
+            return;
+        }
+
+        // Console log dữ liệu nhập vào
+        console.log("Mã nhãn hiệu:", maNhan);
+        console.log("Tên nhãn hiệu:", tenNhan);
+
+        // Chuẩn bị dữ liệu để gửi qua AJAX
+        var formData = {
+            maNhan: maNhan,
+            tenNhan: tenNhan
+        };
+
+        // Gửi dữ liệu tới server qua AJAX
+        $.ajax({
+            url: '/Nhanhieu/Create',  // URL tới Action trong Controller
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                console.log("Phản hồi từ server:", response); // Log phản hồi
+                alert('Nhãn hiệu đã được thêm thành công!');
+                window.location.href = '/Nhanhieu/Index';  // Chuyển hướng sau khi thêm thành công
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>

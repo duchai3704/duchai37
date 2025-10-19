@@ -1,0 +1,165 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "D:\\H\u1ECDc C#\\BTTH1_64130531\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|d:\\h\u1ECDc c#\\btth1_64130531\\baitap5_64130531\\views\\bt5\\dangki.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|solutionrelative:baitap5_64130531\\views\\bt5\\dangki.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap5_64130531\\views\\bt5\\guiemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|solutionrelative:baitap5_64130531\\views\\bt5\\guiemail.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap5_64130531\\controllers\\bt5controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|solutionrelative:baitap5_64130531\\controllers\\bt5controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47038B3C-B61F-408A-8C2B-8DBE44BEE71A}|BaiTap4_64130531\\BaiTap4_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap4_64130531\\controllers\\guiemail_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47038B3C-B61F-408A-8C2B-8DBE44BEE71A}|BaiTap4_64130531\\BaiTap4_64130531.csproj|solutionrelative:baitap4_64130531\\controllers\\guiemail_64130531controller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47038B3C-B61F-408A-8C2B-8DBE44BEE71A}|BaiTap4_64130531\\BaiTap4_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap4_64130531\\views\\guiemail_64130531\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{47038B3C-B61F-408A-8C2B-8DBE44BEE71A}|BaiTap4_64130531\\BaiTap4_64130531.csproj|solutionrelative:baitap4_64130531\\views\\guiemail_64130531\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{47038B3C-B61F-408A-8C2B-8DBE44BEE71A}|BaiTap4_64130531\\BaiTap4_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap4_64130531\\models\\mailinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{47038B3C-B61F-408A-8C2B-8DBE44BEE71A}|BaiTap4_64130531\\BaiTap4_64130531.csproj|solutionrelative:baitap4_64130531\\models\\mailinfo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap5_64130531\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|solutionrelative:baitap5_64130531\\views\\shared\\_layoutadmin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|D:\\H\u1ECDc C#\\BTTH1_64130531\\baitap5_64130531\\models\\registeremp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{54FE038D-8483-4618-A857-B2A0BD4CECFA}|BaiTap5_64130531\\BaiTap5_64130531.csproj|solutionrelative:baitap5_64130531\\models\\registeremp.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 11,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{e506b91c-c606-466a-90a9-123d1d1e12b3}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{3ae79031-e1bc-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{eefa5220-e298-11d0-8f78-00a0c9110057}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{b1e99781-ab81-11d0-b683-00aa00a3ee26}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "GuiEmail.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Views\\BT5\\GuiEmail.cshtml",
+              "RelativeDocumentMoniker": "BaiTap5_64130531\\Views\\BT5\\GuiEmail.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Views\\BT5\\GuiEmail.cshtml",
+              "RelativeToolTip": "BaiTap5_64130531\\Views\\BT5\\GuiEmail.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACcAAAAWAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-11-15T09:35:43.755Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap4_64130531\\Views\\GuiEmail_64130531\\Index.cshtml",
+              "RelativeDocumentMoniker": "BaiTap4_64130531\\Views\\GuiEmail_64130531\\Index.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap4_64130531\\Views\\GuiEmail_64130531\\Index.cshtml",
+              "RelativeToolTip": "BaiTap4_64130531\\Views\\GuiEmail_64130531\\Index.cshtml",
+              "ViewState": "AQIAAA8AAAAAAAAAAAAAABwAAABXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-12T00:07:47.316Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "MailInfo.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap4_64130531\\Models\\MailInfo.cs",
+              "RelativeDocumentMoniker": "BaiTap4_64130531\\Models\\MailInfo.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap4_64130531\\Models\\MailInfo.cs",
+              "RelativeToolTip": "BaiTap4_64130531\\Models\\MailInfo.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T00:07:25.002Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "GuiEmail_64130531Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap4_64130531\\Controllers\\GuiEmail_64130531Controller.cs",
+              "RelativeDocumentMoniker": "BaiTap4_64130531\\Controllers\\GuiEmail_64130531Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap4_64130531\\Controllers\\GuiEmail_64130531Controller.cs",
+              "RelativeToolTip": "BaiTap4_64130531\\Controllers\\GuiEmail_64130531Controller.cs",
+              "ViewState": "AgIAAAsAAAAAAAAAAAAAwBwAAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-12T00:06:50.95Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_LayoutAdmin.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeDocumentMoniker": "BaiTap5_64130531\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "RelativeToolTip": "BaiTap5_64130531\\Views\\Shared\\_LayoutAdmin.cshtml",
+              "ViewState": "AQIAABIAAAAAAAAAAAAAABsAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-11T10:22:19.027Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RegisterEmp.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Models\\RegisterEmp.cs",
+              "RelativeDocumentMoniker": "BaiTap5_64130531\\Models\\RegisterEmp.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Models\\RegisterEmp.cs",
+              "RelativeToolTip": "BaiTap5_64130531\\Models\\RegisterEmp.cs",
+              "ViewState": "AQIAAAYAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T10:22:03.082Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "BT5Controller.cs",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Controllers\\BT5Controller.cs",
+              "RelativeDocumentMoniker": "BaiTap5_64130531\\Controllers\\BT5Controller.cs",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Controllers\\BT5Controller.cs",
+              "RelativeToolTip": "BaiTap5_64130531\\Controllers\\BT5Controller.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-11T10:21:47.047Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "DangKi.cshtml",
+              "DocumentMoniker": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Views\\BT5\\DangKi.cshtml",
+              "RelativeDocumentMoniker": "BaiTap5_64130531\\Views\\BT5\\DangKi.cshtml",
+              "ToolTip": "D:\\H\u1ECDc C#\\BTTH1_64130531\\BaiTap5_64130531\\Views\\BT5\\DangKi.cshtml",
+              "RelativeToolTip": "BaiTap5_64130531\\Views\\BT5\\DangKi.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAEoAAAA7AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-11T10:20:44.982Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

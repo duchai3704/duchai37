@@ -1,0 +1,138 @@
+﻿@model Project_63131920.Context.User
+
+@{
+    ViewBag.Title = "Register";
+}
+
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<div class="form-horizontal">
+    <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+        <article class="card-body">
+            <header class="mb-4"><h4 class="card-title">Đăng ký</h4></header>
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label>Họ tên</label>
+                <input type="text" id="fullname" name="fullname" class="form-control" placeholder="">
+                @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="text" id="phone_number" name="phone_number" class="form-control" placeholder="">
+                @Html.ValidationMessageFor(model => model.phone_number, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-group">
+                <div>
+                    <div class="checkbox">
+                        <label class="custom-control custom-radio custom-control-inline">
+                            @Html.RadioButtonFor(model => model.sex, "True", new { @checked = "checked", @class = "custom-control-input" }) &nbsp;
+                            <span class="custom-control-label"> Nam </span>
+                        </label>
+
+                        <label class="custom-control custom-radio custom-control-inline">
+                            @Html.RadioButtonFor(model => model.sex, "False", new { @class = "custom-control-input" })
+                            <span class="custom-control-label"> Nữ </span>
+                        </label>
+                        @Html.ValidationMessageFor(model => model.sex, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" name="email" class="form-control" placeholder="">
+                <small class="form-text text-muted">Chúng tôi sẽ không chia sẻ với bất kỳ ai</small>
+                @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-6">
+                    <label>Mật khẩu</label>
+                    <input class="form-control" name="password" type="password">
+                    @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                </div>
+                <div class="form-group col-md-6">
+                    <label>Nhập lại mật khẩu</label>
+                    <input class="form-control" type="password">
+                </div>
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Đăng ký" class="btn btn-primary btn-block" />
+            </div>
+        </article>
+    </div>
+    <p class="text-center mt-4">Bạn đã có tài khoản? <a href="~/Home_63131920/Login">Đăng nhập</a></p>
+
+        
+        @*@Html.ValidationSummary(true, "", new { @class = "text-danger" })
+         ========================= SECTION CONTENT ========================= 
+        <section class="section-content padding-y">
+             ============================ COMPONENT REGISTER   ================================= 
+            <div class="card mx-auto" style="max-width:520px; margin-top:40px;">
+                <article class="card-body">
+                    <header class="mb-4"><h4 class="card-title">Đăng ký</h4></header>
+                    <form>
+                        <div class="form-row">
+                            <div class="col form-group">
+                                <label>Họ tên</label>
+                                <input type="text" name="fullname" class="form-control" placeholder="">
+                            </div>  form-group end.// 
+                            @Html.ValidationMessageFor(model => model.fullname, "", new { @class = "text-danger" })
+                        </div>  form-row end.// 
+                        <div class="form-group">
+                            <label>Số điện thoại</label>
+                            <input type="text" name="phone_number" class="form-control" placeholder="">
+                            @Html.ValidationMessageFor(model => model.phone_number, "", new { @class = "text-danger" })
+                        </div>  form-group end.// 
+                        <div class="form-group">
+                            <label>Email</label>
+                            <input type="email" name="email" class="form-control" placeholder="">
+                            <small class="form-text text-muted">Chúng tôi sẽ không chia sẻ với bất kỳ ai</small>
+                            @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                        </div>  form-group end.// 
+                        <div class="form-group">
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" checked="" type="radio" name="sex" value="option1">
+                                <span class="custom-control-label"> Nam </span>
+                            </label>
+                            <label class="custom-control custom-radio custom-control-inline">
+                                <input class="custom-control-input" type="radio" name="sex" value="option2">
+                                <span class="custom-control-label"> Nữ </span>
+                            </label>
+                        </div>  form-group end.// 
+                        <div class="form-row">
+                            <div class="form-group col-md-6">
+                                <label>Mật khẩu</label>
+                                <input class="form-control" name="password" type="password">
+                                @Html.ValidationMessageFor(model => model.password, "", new { @class = "text-danger" })
+                            </div>  form-group end.// 
+                            <div class="form-group col-md-6">
+                                <label>Nhập lại mật khẩu</label>
+                                <input class="form-control" type="password">
+                            </div>  form-group end.// 
+                        </div>
+                        <div class="form-group">
+                            <button type="submit" class="btn btn-primary btn-block"> Đăng ký  </button>
+                        </div>  form-group// 
+                    </form>
+                </article> card-body.// 
+            </div>  card .// 
+            <p class="text-center mt-4">Bạn đã có tài khoản? <a href="#">Đăng nhập</a></p>
+            <br><br>
+             ============================ COMPONENT REGISTER  END.// ================================= 
+        </section>
+         ========================= SECTION CONTENT END// =========================*@ 
+        <hr />
+    </div>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

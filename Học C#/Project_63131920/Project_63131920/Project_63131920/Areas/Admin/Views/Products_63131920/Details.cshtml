@@ -1,0 +1,56 @@
+﻿@model Project_63131920.Context.Product
+
+@{
+    ViewBag.Title = "Thông tin sản phẩm";
+}
+
+
+<div class="row" style="padding: 0 24px">
+    <div class="col-md-12">
+        <h3 class="text-center mt-3">Thông tin chi tiết</h3>
+    </div>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-4">
+                <h6 class="text-center text-primary">Ảnh sản phẩm</h6>
+                <hr />
+                <img class="w-100 h-auto" src="~/Assets/images/items/@Model.product_image" />
+            </div>
+            <div class="col-md-8">
+                <h6 class="text-center text-primary">Thông tin sản phẩm</h6>
+                <hr />
+                <table class="table table-bordered"">
+                    <tr>
+                        <td class="text-dark">@Html.DisplayNameFor(model => model.product_name)</td>
+                        <td>@Html.DisplayFor(model => model.product_name)</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-dark">@Html.DisplayNameFor(model => model.Category.name)</td>
+                        <td>@Html.DisplayFor(model => model.Category.name)</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-dark">@Html.DisplayNameFor(model => model.price)</td>
+                        <td>@Model.price.ToString("#,##0")</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-dark">@Html.DisplayNameFor(model => model.qty_in_stock)</td>
+                        <td>@Html.DisplayFor(model => model.qty_in_stock)</td>
+                    </tr>
+
+                    <tr>
+                        <td class="text-dark">@Html.DisplayNameFor(model => model.description)</td>
+                        <td>@Html.Raw(Model.description)</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div style="text-align: right; padding: 0 24px">
+    @Html.ActionLink("Sửa", "Edit", new { id = Model.id }) |
+    @Html.ActionLink("Quay lại", "Index")
+</div>

@@ -1,0 +1,133 @@
+﻿@using Admin_64130531.Models
+@model IEnumerable<Admin_64130531.Models.Danhmuc>
+
+@{
+    ViewData["Title"] = "Danh Sách Danh Mục";
+}
+
+<h5 class="text-center">Danh Sách Danh Mục</h5>
+<div class="col-md-9">
+    <form method="post" asp-action="Create" asp-controller="DanhMuc">
+        @Html.AntiForgeryToken()
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="form-group mb-4">
+                    <label for="maDanhmuc">Mã danh mục</label>
+                    <input id="maDanhmuc" asp-for="maDanhmuc" class="form-control" />
+                    <span asp-validation-for="maDanhmuc" class="text-danger"></span>
+                </div>
+
+                <div class="form-group mb-4">
+                    <label for="tenDanhmuc">Tên danh mục</label>
+                    <input id="tenDanhmuc" asp-for="tenDanhmuc" class="form-control" />
+                    <span asp-validation-for="tenDanhmuc" class="text-danger"></span>
+                </div>
+            </div>
+        </div>
+
+        <button id="btnAddProduct" onclick="addProduct()" class="btn btn-primary">Thêm danh mục</button>
+    </form>
+</div>
+
+<!-- Hiển thị bảng danh mục -->
+<table class="table">
+    <thead class="thead-dark">
+        <tr>
+            <th scope="col">Mã danh mục</th>
+            <th scope="col">Tên danh mục</th>
+            <th scope="col">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            int index = 1;
+            foreach (var item in Model)
+            {
+                <tr>
+                    <td>@item.maDanhmuc</td>
+                    <td>@item.tenDanhmuc</td>
+                    <td>
+                        <div class="d-flex gap-2" style="margin-left: -65px;">
+                            <a asp-action="Edit" href="/DanhMuc/Edit?id=@item.maDanhmuc" class="btn btn-warning btn-sm" asp-controller="DanhMuc">Edit</a>
+                            <a asp-action="DeleteConfirmed" onclick="return confirm('Bạn có chắc chắn muốn xóa danh mục này?') && deletesp('@item.maDanhmuc')" class="btn btn-danger btn-sm">Delete</a>
+                        </div>
+                    </td>
+                </tr>
+                index++;
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="4" class="text-center">Không có danh mục nào được tìm thấy</td>
+            </tr>
+        }
+    </tbody>
+</table>
+<script>
+
+    function deletesp(madanhmuc) {
+        console.log("Xóa danh mục có mã:", madanhmuc);
+
+        var formData = {
+            id: madanhmuc,  
+        };
+
+        $.ajax({
+            url: '/DanhMuc/DeleteConfirmed',
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Xóa danh mục thành công');
+                window.location.href = '/DanhMuc/Index';
+            },
+            error: function (xhr, status, error) {
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+
+    function addProduct() {
+        console.log("hai");
+        // Lấy dữ liệu từ form
+        var maDanhMuc = $('#maDanhmuc').val();  // Lấy giá trị của trường mã danh mục
+        var tenDanhMuc = $('#tenDanhmuc').val();  // Lấy giá trị của trường tên danh mục
+
+        // Console log tất cả các giá trị
+        console.log("Mã danh mục:", maDanhMuc);
+        console.log("Tên danh mục:", tenDanhMuc);
+
+        // Gửi dữ liệu formData đến controller qua AJAX
+        var formData = {
+            maDanhMuc: maDanhMuc,
+            tenDanhMuc: tenDanhMuc
+        };
+
+        // Gửi dữ liệu formData đến controller qua AJAX (ví dụ gửi qua POST)
+        $.ajax({
+            url: '/DanhMuc/Create',  // URL tới Action trong Controller (Cập nhật URL phù hợp với action thêm danh mục)
+            type: 'POST',
+            data: formData,
+            success: function (response) {
+                alert('Danh mục đã được thêm thành công!');
+                window.location.href = '/DanhMuc/Index';
+            },
+            error: function (xhr, status, error) {
+                // Xử lý khi có lỗi xảy ra
+                console.error("Lỗi khi gửi request AJAX:");
+                console.error("Status:", status);
+                console.error("Error:", error);
+                console.error("Response Text:", xhr.responseText);  // In chi tiết lỗi trả về từ server
+                console.error("Response Status:", xhr.status);
+                alert('Đã có lỗi xảy ra. Vui lòng thử lại!');
+            }
+        });
+    }
+</script>
