@@ -1,0 +1,24 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class Election{
+    - {static} Election instance
+    - int trump, biden
+    - List<String> userID
+    - Election()
+    + {static} Election getInstance()
+    # void vote(Candidate c)
+    + void printResult()
+}
+enum Candidate{
+    TRUMP, BIDEN
+}
+class User{
+    String name
+    + void vote(Candidate c)
+}
+class MainVote
+User ..> Election
+MainVote --> "*" User
+
+@enduml

@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class DataAccess{
+    - {static} DataAccess instance
+    - DataAccess()
+    + {static} DataAccess getInstance()
+    + void them(SanPham s)
+    + void inKQ();
+}
+
+class SanPham
+
+class MainA6
+MainA6 --> DataAccess
+DataAccess *--> SanPham: "dsSP"
+@enduml

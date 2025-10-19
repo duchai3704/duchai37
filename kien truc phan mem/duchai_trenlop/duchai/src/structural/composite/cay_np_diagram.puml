@@ -1,0 +1,22 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class Nut{
+    int giaTri
+    + void ThemTrai(Nut nut)
+    + void ThemPhai(Nut nut)
+    + void XoaTrai()
+    + void XoaPhai()
+    void Duyet()
+}
+
+class NutLa
+class Nuttrong
+
+Nut <|-- NutLa
+Nut <|-- Nuttrong
+
+Nuttrong --> Nut: trai
+Nuttrong --> Nut: phai
+
+@enduml

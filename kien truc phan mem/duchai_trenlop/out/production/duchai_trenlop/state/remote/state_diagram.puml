@@ -1,0 +1,28 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class RemoteControl{
+    + RemoteControl()
+    + void setState(RemoteState state)
+    + void powerPress()
+}
+interface IRemoteState{
+    + void handle(RemoteControl remote)
+}
+class OnState implements IRemoteState{
+    + void handle(RemoteControl remote)
+}
+class OffStatte implements IRemoteState
+
+RemoteControl --> IRemoteState : state
+
+note left of OnState
+    Mở thiết bị
+    Thiết lập lại state của remote thành OffStatte
+end note
+
+note left of RemoteControl
+    thiết lập state mặc định:
+        state = new OffStatte();
+end note
+@enduml

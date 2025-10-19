@@ -1,0 +1,36 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class ChuoiMenhGiaFactory{
+    # ATM_TheoMenhGia getChuoiMenhGia(int menhGia)
+    + void rutTien(int soTien, int menhGiaCaoNhat)
+}
+
+class ChuoiMenhGiaVND extends ChuoiMenhGiaFactory
+
+abstract class ATM_TheoMenhGia{
+    int menhGia
+    + ATM_TheoMenhGia keTiep(ATM_TheoMenhGia keTiep)
+    + void rutTien(int soTien)
+}
+
+class MenhGiaThapNhat extends ATM_TheoMenhGia
+class MenhGia extends ATM_TheoMenhGia
+
+ChuoiMenhGiaVND *--> ATM_TheoMenhGia: m500,m100...m1
+MenhGiaThapNhat --> ATM_TheoMenhGia:keTiep
+
+note right of ChuoiMenhGiaFactory
+    + Phương thức rutTien:
+        - Gọi phương thức getChuoiMenhGia --> chuoiMenhGia
+        - Gọi phương thức rutTien trên đối tượng chuoiMenhGia
+end note
+
+note right of ChuoiMenhGiaVND
+    + Tạo các đối tượng ATM_TheoMenhGia theo mệnh giá tiền Việt Nam:
+    + Kết nối các đối tượng này thành chuỗi trong phương thức khởi tạo
+    + Phương thức getChuoiMenhGia trả về
+    đối tượng kieu ATM_TheoMenhGia trong chuỗi
+end note
+
+@enduml

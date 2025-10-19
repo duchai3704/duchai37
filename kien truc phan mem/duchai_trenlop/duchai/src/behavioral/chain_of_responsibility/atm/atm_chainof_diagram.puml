@@ -1,0 +1,15 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+abstract class MenhGiaATM{
+    int giaTri
+    MenhGiaATM thietLapKeTiep(MenhGiaATM k)
+    void rutTien(int soTien)
+}
+
+class MenhGiaThapNhat
+class MenhGia
+MenhGiaATM <|-- MenhGiaThapNhat
+MenhGiaATM <|-- MenhGia
+MenhGia --> MenhGiaATM: keTiep
+@enduml

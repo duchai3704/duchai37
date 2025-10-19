@@ -1,0 +1,25 @@
+@startuml
+'https://plantuml.com/sequence-diagram
+
+class ATM{
+    + int soTien
+    + setState(ATM atm) state
+    + ATM()
+    + napTien(int);
+    + rutTien();
+}
+interface ATM_State{
+    + xuLyNapTien(ATM atm, int soTien);
+    + xuLyRutTien(ATM atm);
+}
+
+class SanSang
+class HanChe
+class HetTien
+
+ATM --> ATM_State: state
+ATM_State <|.. SanSang
+ATM_State <|.. HanChe
+ATM_State <|.. HetTien
+
+@enduml
